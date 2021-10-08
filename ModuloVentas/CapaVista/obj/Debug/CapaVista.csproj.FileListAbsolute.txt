@@ -1,0 +1,12 @@
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\bin\Debug\CapaVista.dll
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\bin\Debug\CapaVista.pdb
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.AssemblyReference.cache
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.MDIVentas.resources
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.Properties.Resources.resources
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.GenerateResource.cache
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.CoreCompileInputs.cache
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.dll
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.pdb
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\bin\Debug\CapaControlador.dll
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\bin\Debug\CapaControlador.pdb
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete

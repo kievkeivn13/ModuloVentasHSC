@@ -1,0 +1,13 @@
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\bin\Debug\ModuloVentas(Ejecutable).exe.config
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\bin\Debug\ModuloVentas(Ejecutable).exe
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\bin\Debug\ModuloVentas(Ejecutable).pdb
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\bin\Debug\CapaVista.dll
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\bin\Debug\CapaVista.pdb
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas(Ejecutable).csproj.AssemblyReference.cache
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas_Ejecutable_.Form1.resources
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas_Ejecutable_.Properties.Resources.resources
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas(Ejecutable).csproj.GenerateResource.cache
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas(Ejecutable).csproj.CoreCompileInputs.cache
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas(Ejecutable).csproj.CopyComplete
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas(Ejecutable).exe
+C:\Users\sucel\source\repos\ModuloVentas(Ejecutable)\ModuloVentas(Ejecutable)\obj\Debug\ModuloVentas(Ejecutable).pdb
