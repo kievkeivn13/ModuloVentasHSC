@@ -36,9 +36,16 @@ namespace CapaVista
 			this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.catalogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.morasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fraccionamientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.inventariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tipoInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.documentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -70,7 +77,11 @@ namespace CapaVista
 			// catalogosToolStripMenuItem
 			// 
 			this.catalogosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem});
+            this.clientesToolStripMenuItem,
+            this.morasToolStripMenuItem,
+            this.fraccionamientosToolStripMenuItem,
+            this.inventariosToolStripMenuItem,
+            this.documentosToolStripMenuItem});
 			this.catalogosToolStripMenuItem.Name = "catalogosToolStripMenuItem";
 			this.catalogosToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
 			this.catalogosToolStripMenuItem.Text = "Catalogos";
@@ -78,9 +89,23 @@ namespace CapaVista
 			// clientesToolStripMenuItem
 			// 
 			this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-			this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.clientesToolStripMenuItem.Text = "Clientes";
 			this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+			// 
+			// morasToolStripMenuItem
+			// 
+			this.morasToolStripMenuItem.Name = "morasToolStripMenuItem";
+			this.morasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.morasToolStripMenuItem.Text = "Moras";
+			this.morasToolStripMenuItem.Click += new System.EventHandler(this.morasToolStripMenuItem_Click);
+			// 
+			// fraccionamientosToolStripMenuItem
+			// 
+			this.fraccionamientosToolStripMenuItem.Name = "fraccionamientosToolStripMenuItem";
+			this.fraccionamientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.fraccionamientosToolStripMenuItem.Text = "Fraccionamientos";
+			this.fraccionamientosToolStripMenuItem.Click += new System.EventHandler(this.fraccionamientosToolStripMenuItem_Click);
 			// 
 			// procesosToolStripMenuItem
 			// 
@@ -99,6 +124,44 @@ namespace CapaVista
 			this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
 			this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
 			this.ayudaToolStripMenuItem.Text = "Ayuda";
+			// 
+			// inventariosToolStripMenuItem
+			// 
+			this.inventariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tipoInventarioToolStripMenuItem,
+            this.inventarioToolStripMenuItem});
+			this.inventariosToolStripMenuItem.Name = "inventariosToolStripMenuItem";
+			this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.inventariosToolStripMenuItem.Text = "Inventarios";
+			// 
+			// tipoInventarioToolStripMenuItem
+			// 
+			this.tipoInventarioToolStripMenuItem.Name = "tipoInventarioToolStripMenuItem";
+			this.tipoInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.tipoInventarioToolStripMenuItem.Text = "Tipo Inventario";
+			this.tipoInventarioToolStripMenuItem.Click += new System.EventHandler(this.tipoInventarioToolStripMenuItem_Click);
+			// 
+			// inventarioToolStripMenuItem
+			// 
+			this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+			this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.inventarioToolStripMenuItem.Text = "Inventario";
+			this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
+			// 
+			// documentosToolStripMenuItem
+			// 
+			this.documentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tipoDocumentoToolStripMenuItem});
+			this.documentosToolStripMenuItem.Name = "documentosToolStripMenuItem";
+			this.documentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.documentosToolStripMenuItem.Text = "Documentos";
+			// 
+			// tipoDocumentoToolStripMenuItem
+			// 
+			this.tipoDocumentoToolStripMenuItem.Name = "tipoDocumentoToolStripMenuItem";
+			this.tipoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.tipoDocumentoToolStripMenuItem.Text = "Tipo Documento";
+			this.tipoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDocumentoToolStripMenuItem_Click);
 			// 
 			// MDIVentas
 			// 
@@ -130,5 +193,12 @@ namespace CapaVista
 		private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem morasToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem fraccionamientosToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem inventariosToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tipoInventarioToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem documentosToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tipoDocumentoToolStripMenuItem;
 	}
 }

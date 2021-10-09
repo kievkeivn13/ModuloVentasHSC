@@ -7,3 +7,12 @@ C:\Users\sucel\source\repos\ModuloVentas\CapaControlador\obj\Debug\CapaControlad
 C:\Users\sucel\source\repos\ModuloVentas\CapaControlador\bin\Debug\CapaModelo.dll
 C:\Users\sucel\source\repos\ModuloVentas\CapaControlador\bin\Debug\CapaModelo.pdb
 C:\Users\sucel\source\repos\ModuloVentas\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\bin\Debug\CapaControlador.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\bin\Debug\CapaControlador.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\bin\Debug\CapaModelo.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\bin\Debug\CapaModelo.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\obj\Debug\CapaControlador.csproj.AssemblyReference.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\obj\Debug\CapaControlador.csproj.CoreCompileInputs.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\obj\Debug\CapaControlador.csproj.CopyComplete
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\obj\Debug\CapaControlador.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControlador\obj\Debug\CapaControlador.pdb

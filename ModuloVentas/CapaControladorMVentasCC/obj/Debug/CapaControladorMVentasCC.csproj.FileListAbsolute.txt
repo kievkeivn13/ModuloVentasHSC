@@ -1,0 +1,9 @@
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\bin\Debug\CapaControladorMVentasCC.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\bin\Debug\CapaControladorMVentasCC.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\obj\Debug\CapaControladorMVentasCC.csproj.AssemblyReference.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\obj\Debug\CapaControladorMVentasCC.csproj.CoreCompileInputs.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\obj\Debug\CapaControladorMVentasCC.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\obj\Debug\CapaControladorMVentasCC.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\bin\Debug\CapaModeloMVentasCC.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\bin\Debug\CapaModeloMVentasCC.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaControladorMVentasCC\obj\Debug\CapaControladorMVentasCC.csproj.CopyComplete

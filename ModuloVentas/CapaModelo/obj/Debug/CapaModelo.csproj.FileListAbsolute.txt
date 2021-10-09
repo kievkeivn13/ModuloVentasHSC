@@ -4,3 +4,9 @@ C:\Users\sucel\source\repos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.csproj.
 C:\Users\sucel\source\repos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\sucel\source\repos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\sucel\source\repos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaModelo\bin\Debug\CapaModelo.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaModelo\bin\Debug\CapaModelo.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaModelo\obj\Debug\CapaModelo.pdb

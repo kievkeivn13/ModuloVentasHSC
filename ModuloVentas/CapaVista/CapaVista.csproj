@@ -46,6 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmMantenimientoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoCliente.Designer.cs">
+      <DependentUpon>frmMantenimientoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoFraccionamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoFraccionamiento.Designer.cs">
+      <DependentUpon>frmMantenimientoFraccionamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoInventario.Designer.cs">
+      <DependentUpon>frmMantenimientoInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoMora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoMora.Designer.cs">
+      <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoTipoDocumento.Designer.cs">
+      <DependentUpon>frmMantenimientoTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoTipoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoTipoInventario.Designer.cs">
+      <DependentUpon>frmMantenimientoTipoInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +96,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmMantenimientoCliente.resx">
+      <DependentUpon>frmMantenimientoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoFraccionamiento.resx">
+      <DependentUpon>frmMantenimientoFraccionamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoInventario.resx">
+      <DependentUpon>frmMantenimientoInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoMora.resx">
+      <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoTipoDocumento.resx">
+      <DependentUpon>frmMantenimientoTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoTipoInventario.resx">
+      <DependentUpon>frmMantenimientoTipoInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIVentas.resx">
       <DependentUpon>MDIVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -69,6 +123,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Recursos\90 Simple Backgrounds Edit and Download Visual Learning Center.jpg" />
     <Content Include="Recursos\fondo ventas.jpg" />
     <Content Include="Recursos\pinpng.com-icono-de-telefono-png-1284803.ico" />
   </ItemGroup>

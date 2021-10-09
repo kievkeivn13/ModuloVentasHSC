@@ -7,6 +7,30 @@ C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.Ge
 C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.CoreCompileInputs.cache
 C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.dll
 C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.pdb
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoMora.resources
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoFraccionamiento.resources
 C:\Users\sucel\source\repos\ModuloVentas\CapaVista\bin\Debug\CapaControlador.dll
 C:\Users\sucel\source\repos\ModuloVentas\CapaVista\bin\Debug\CapaControlador.pdb
 C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoCliente.resources
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoInventario.resources
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoTipoDocumento.resources
+C:\Users\sucel\source\repos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoTipoInventario.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\bin\Debug\CapaVista.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\bin\Debug\CapaVista.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\bin\Debug\CapaControlador.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\bin\Debug\CapaControlador.pdb
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.AssemblyReference.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoCliente.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoFraccionamiento.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoInventario.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoMora.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoTipoDocumento.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.frmMantenimientoTipoInventario.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.MDIVentas.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.Properties.Resources.resources
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.GenerateResource.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.CoreCompileInputs.cache
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.csproj.CopyComplete
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.dll
+E:\Users\Kevin.000\Documents\Kevin\Ing. Sistemas\Octavo Semestre\Análisis de Sistemas II\Mudulo Ventas\40 % de los Mantenimientos\ModuloVentas\CapaVista\obj\Debug\CapaVista.pdb
