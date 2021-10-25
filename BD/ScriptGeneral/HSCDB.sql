@@ -1,90 +1,79 @@
+-- --------------------------
+# LDD Database hotelSanCarlos
+-- --------------------------
+
 -- DROP DATABASE hotelSanCarlos;
 CREATE DATABASE hotelSanCarlos;
 USE hotelSanCarlos;
 
 -- ------------------------------------------------------------------------------------------------------------
--- 												COMPONENTE SEGURIDAD
+-- 	COMPONENTE SEGURIDAD
 -- ------------------------------------------------------------------------------------------------------------
-CREATE TABLE Empleado(
+CREATE TABLE empleado(
 	pkIdEmpleado varchar(15) PRIMARY KEY,
 	nombre varchar(25) NOT NULL,
 	apellido varchar(25) NOT NULL
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE usuario(
+	pkId VARCHAR(15) PRIMARY KEY,
+	fkIdEmpleado varchar(15) NOT NULL, 
+	nombre VARCHAR(30) NOT NULL,
+	contraseña VARCHAR(100) NOT NULL,
+	estado VARCHAR(1) NOT NULL,
+	intento INT NULL,
 
-CREATE TABLE Usuario(
-pkId VARCHAR(15) PRIMARY KEY,
-fkIdEmpleado varchar(15) NOT NULL, 
-nombre VARCHAR(30) NOT NULL,
-contraseña VARCHAR(100) NOT NULL,
-estado VARCHAR(1) NOT NULL,
-intento INT NULL,
+	FOREIGN KEY (fkIdEmpleado) REFERENCES empleado(pkIdEmpleado)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-FOREIGN KEY (fkIdEmpleado) REFERENCES  Empleado(pkIdEmpleado)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE modulo(
+	pkId VARCHAR(15) PRIMARY KEY,
+	nombre VARCHAR(30) NOT NULL,
+	descripcion VARCHAR(200) NOT NULL,
+	estado VARCHAR(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	
+CREATE TABLE aplicacion(
+	pkId VARCHAR(15) PRIMARY KEY,
+	fkIdModulo VARCHAR(15) NOT NULL,
+	nombre VARCHAR(45) NULL,
+	estado INT NOT NULL,
+	rutaChm varchar(180) not null,
+	rutaHtml varchar(180) not null,
+	FOREIGN KEY (fkIdModulo) REFERENCES modulo(pkId)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE Modulo(
-pkId VARCHAR(15) PRIMARY KEY,
-nombre VARCHAR(30) NOT NULL,
-descripcion VARCHAR(200) NOT NULL,
-estado VARCHAR(1) NOT NULL
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE Aplicacion(
-pkId VARCHAR(15) PRIMARY KEY,
-fkIdModulo VARCHAR(15) NOT NULL,
-nombre VARCHAR(45) NULL,
-estado INT NOT NULL,
-rutaChm varchar(80) not null,
-rutaHtml varchar(80) not null,
-FOREIGN KEY (fkIdModulo) REFERENCES Modulo(pkId)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
--- INSERT INTO aplicacion VALUES ("1","1","Prueba", "1", "1", "");
-/*
-INSERT INTO aplicacion VALUES ("2","Registro de Usuario",1,"");
-INSERT INTO aplicacion VALUES ("3","Asignación de Perfiles a Usuario",1,"");
-INSERT INTO aplicacion VALUES ("4","Permisos Usuario Aplicación",1,"");
-*/
-create table reporte (
-	idReporte int NOT NULL primary key,
-	nombre varchar(20) NOT NULL,
-	ruta varchar(100) NOT NULL,
-    idAplicacion VARCHAR(15) not null,
-	estado char(1) NOT NULL,
-    foreign key (idAplicacion) references aplicacion(pkId)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-
-CREATE TABLE BitacoraUsuario(
+CREATE TABLE bitacoraUsuario(
 	pkId INT AUTO_INCREMENT PRIMARY KEY,
+	fkIdUsuario VARCHAR(15) NOT NULL,
 	`host` VARCHAR(45) NULL DEFAULT NULL,
 	ip VARCHAR(20) NULL,
-	conexionFecha DATE NULL,
-	conexionHora TIME NULL,
-	fkIdUsuario VARCHAR(15) NOT NULL,
+	fkIdModulo VARCHAR(15) NOT NULL,
 	fkIdAplicacion VARCHAR(15) NOT NULL,
 	accion VARCHAR(200) NOT NULL,
+	conexionFecha DATE NULL,
+	conexionHora TIME NULL,
+  
+	FOREIGN KEY (fkIdUsuario) REFERENCES usuario (pkId),
+	FOREIGN KEY (fkIdModulo) REFERENCES modulo (pkId),
+	FOREIGN KEY (fkIdAplicacion) REFERENCES aplicacion(pkID)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-	FOREIGN KEY (fkIdUsuario) REFERENCES Usuario (pkId),
-	FOREIGN KEY (fkIdAplicacion) REFERENCES Aplicacion(pkID)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE Perfil(
+CREATE TABLE perfil(
 	pkId VARCHAR(15) PRIMARY KEY,
 	nombre VARCHAR(45) NULL,
 	estado VARCHAR(45) NULL
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE UsuarioPerfil(
+CREATE TABLE usuarioPerfil(
 	fkIdUsuario VARCHAR(15) NOT NULL,
 	fkIdPerfil VARCHAR(15) NOT NULL,
 
 	FOREIGN KEY (fkIdPerfil) REFERENCES Perfil (pkId),
 	FOREIGN KEY (fkIdUsuario) REFERENCES Usuario (pkId)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE UsuarioAplicacion(
+CREATE TABLE usuarioAplicacion(
 	fkIdUsuario VARCHAR(15) NOT NULL,
 	fkIdAplicacion VARCHAR(15) NOT NULL,
 	permisoEscritura int,
@@ -95,11 +84,9 @@ CREATE TABLE UsuarioAplicacion(
 
 	FOREIGN KEY (fkIdAplicacion) REFERENCES Aplicacion (pkId),
 	FOREIGN KEY (fkIdUsuario) REFERENCES Usuario (pkId)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-#insert into usuarioaplicacion VALUES (1,1,null,null,null,null,null);      
-
-CREATE TABLE IF NOT EXISTS AplicacionPerfil (
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+   
+CREATE TABLE aplicacionPerfil (
 	fkIdPerfil VARCHAR(15) NOT NULL,
 	fkIdAplicacion VARCHAR(15) NOT NULL,
 	permisoEscritura int,
@@ -110,30 +97,9 @@ CREATE TABLE IF NOT EXISTS AplicacionPerfil (
 
 	FOREIGN KEY (fkIdAplicacion) REFERENCES Aplicacion (pkId),
 	FOREIGN KEY (fkIdPerfil) REFERENCES Perfil (pkId)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE UsuarioAplicacionAsignados(
-	fkIdUsuario VARCHAR(15) NOT NULL,
-	fkIdAplicacion VARCHAR(15) NOT NULL,
-
-	FOREIGN KEY (fkIdAplicacion) REFERENCES Aplicacion (pkId),
-	FOREIGN KEY (fkIdUsuario) REFERENCES Usuario (pkId)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-/*insert into aplicacionperfil VALUES (1,1,null,null,null,null,null);
-insert into aplicacionperfil VALUES (2,1,1,1,1,1,1);
-insert into aplicacionperfil VALUES (1,2,1,1,1,1,1);*/
-
--- INSERT SEGURIDAD
-INSERT INTO empleado VALUES ("1","María","Hernandez");
-INSERT INTO usuario(pkId,fkIdEmpleado, nombre, contraseña,estado,intento) VALUES ("1", "1", "admin","LKAekHU9EtweB49HAaTRfg==","1","0");
-#usuario: admin
-#contraseña: 12345
-INSERT INTO modulo VALUES ("1", "Seguridad", "Modulo de seguridad", 1);
-INSERT INTO perfil VALUES("1","Administrador","1");
-INSERT INTO perfil VALUES("2","Vendedor","1");
-
--- VISTAS SEGURIDAD
+-- Vista #1
 CREATE 
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
@@ -155,8 +121,7 @@ VIEW `hotelSanCarlos`.`vwpermisosperfil` AS
         JOIN `hotelSanCarlos`.`aplicacion` `c` ON ((`c`.`pkId` = `a`.`fkIdAplicacion`)))
     ORDER BY `a`.`fkIdPerfil`;
 
--- select * from vwpermisosperfil;
-
+-- Vista #2
 CREATE 
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
@@ -178,223 +143,85 @@ VIEW `hotelSanCarlos`.`vwpermisosusuario` AS
         JOIN `hotelSanCarlos`.`aplicacion` `c` ON ((`c`.`pkId` = `a`.`fkIdAplicacion`)))
     ORDER BY `a`.`fkIdUsuario`;
     
--- select * from vwpermisosusuario;
-    
-    
--- ------------------------------------------------------------------------------------------------------------
--- 											COMPONENTE NAVEGADOR (PRUEBAS)
--- ------------------------------------------------------------------------------------------------------------
-create table marcaP(
-	idMarca varchar(10) not null primary key,
-    nombre varchar(35) not null,
-    estatus char(1) not null
+
+CREATE TABLE usuarioAplicacionAsignados(
+	fkIdUsuario VARCHAR(15) NOT NULL,
+	fkIdAplicacion VARCHAR(15) NOT NULL,
+
+	FOREIGN KEY (fkIdAplicacion) REFERENCES Aplicacion (pkId),
+	FOREIGN KEY (fkIdUsuario) REFERENCES Usuario (pkId)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE producto(
-	idProducto varchar(20) not null primary key,
-	idMarca varchar(10) not null,
-	nombre varchar(45) not null,
-	fecha date not null,
-	descripcion varchar(100) not null,
-	stock int not null,
-	precio float not null,
-	estado char(1) not null,
-  
-	foreign key (idMarca) references marcaP(idMarca)
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-
--- INSERT NAVEGADOR
-
-INSERT INTO `hotelsancarlos`.`marcaP` (`idMarca`, `nombre`, `estatus`) VALUES ('1', 'Nike', 'A');
-INSERT INTO `hotelsancarlos`.`marcaP` (`idMarca`, `nombre`, `estatus`) VALUES ('2', 'Adidas', 'A');
-
-INSERT INTO `hotelsancarlos`.`aplicacion` (`pkId`, `fkIdModulo`, `nombre`, `estado`, `rutaChm`, `rutaHtml`) VALUES ('1', '1', 'Prueba', '1', 'Ayudas/AyudasSistemaReparto.chm', 'ManualSistemaReparto.html');
-INSERT INTO `hotelsancarlos`.`reporte` (`idReporte`, `nombre`, `ruta`, `idAplicacion`, `estado`) VALUES ('1', 'Reporte de Pruebas', 'Reportes/productos.rpt', '1', 'A');
-
-INSERT INTO `hotelsancarlos`.`producto` (`idProducto`, `idMarca`, `nombre`, `fecha`, `descripcion`, `stock`, `precio`, `estado`) VALUES ('1', '1', 'Producto1', '2021/09/22', 'Descripcion', '10', '15', 'A');
-INSERT INTO `hotelsancarlos`.`producto` (`idProducto`, `idMarca`, `nombre`, `fecha`, `descripcion`, `stock`, `precio`, `estado`) VALUES ('2', '2', 'Producto 2', '2021-10-07', 'Descripcion 2', '200', '5', 'A');
 
 
 -- ------------------------------------------------------------------------------------------------------------
 -- 												CONSULTAS INTELIGENTES
 -- ------------------------------------------------------------------------------------------------------------
-CREATE TABLE factura_header (
-  id_factura_header int NOT NULL,
-  id_proveedor int DEFAULT NULL,
-  total float DEFAULT NULL
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE linea (
-   id_linea int NOT NULL,
-   nombre varchar(100) DEFAULT NULL,
-   descripcion varchar(500) DEFAULT NULL,
-   id_marca int DEFAULT NULL
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE marca (
-   id_marca int NOT NULL,
-   nombre varchar(100) DEFAULT NULL,
-   descripcion varchar(500) DEFAULT NULL,
-   id_proveedor int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE proveedores (
-   id_proveedor int NOT NULL,
-   nombre varchar(100) DEFAULT NULL,
-   direccion varchar(500) DEFAULT NULL,
-   telefono int DEFAULT NULL,
-   email varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE registro_compra (
-   id_registro int NOT NULL,
-   id_factura_header int DEFAULT NULL,
-   Monto float DEFAULT NULL,
-   fecha date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
 CREATE TABLE registro_consultas (
-   id_registro int NOT NULL,
+   id_registro int primary key auto_increment NOT NULL,
    nombre varchar(200) DEFAULT NULL,
    consulta varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
--- INSERT CONSULTAS INTELIGENTES
-INSERT INTO `linea` (`id_linea`, `nombre`, `descripcion`, `id_marca`) VALUES (1, '1', '1', 1), (2, '1', '1', 1), (3, '1', '1', 1);
-INSERT INTO `marca` (`id_marca`, `nombre`, `descripcion`, `id_proveedor`) VALUES (1, '1', '1', 1);
-INSERT INTO `proveedores` (`id_proveedor`, `nombre`, `direccion`, `telefono`, `email`) VALUES (1, 'prueba', 'prueba', 12345678, 'prueba');
+-- ------------------------------------------------------------------------------------------------------------
+-- 							MÓDULO CONTABILIDAD - PÓLIZAS
+-- ------------------------------------------------------------------------------------------------------------
+create table tipoCuenta(
+	idTipoCuenta varchar(15), -- si es activo o pasivo
+	nombre varchar(65), -- escribir nombre completo ej Activo Corriente
+	estado varchar(1),
 
---
--- Volcado de datos para la tabla `registro_consultas`
---
+	primary key (idTipoCuenta)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `registro_consultas` (`id_registro`, `nombre`, `consulta`) VALUES
-(3, 'consulta1', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\" OR id_linea=\"3\"  order by id_linea desc;'),
-(4, 'consulta2', 'SELECT id_factura_header as fh FROM factura_header ;'),
-(5, 'aniversario', 'SELECT nombre as nonono FROM proveedores ;'),
-(8, 'todosprov', 'SELECT  * FROM proveedores ;'),
-(10, 'nuevoprov', 'SELECT  * FROM proveedores '),
-(11, 'Demostracion', 'SELECT  * FROM linea    ;'),
-(12, 'Todos los campos', 'SELECT  * FROM proveedores '),
-(13, 'simple', 'SELECT nombre FROM marca '),
-(14, 'pruebasimple', 'SELECT nombre FROM linea     ;'),
-(18, 'ejemplox', 'SELECT  * FROM linea  WHERE id_linea=\"1\"    ;'),
-(19, 'pruebabiggs', 'SELECT  * FROM linea  WHERE id_linea=\"1\"    ;'),
-(20, 'and', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  AND nombre=\"1\"   ;'),
-(21, 'orord', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea desc ;'),
-(22, 'error', 'SELECT  * FROM linea  WHERE nombre=\"1\"  AND id_linea=\"1\"  group by id_linea ;'),
-(28, 'prueba', 'SELECT  * FROM registro_consultas  WHERE id_registro=\"1\"    ;'),
-(29, 'Pruebadef', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea desc ;'),
-(30, 'pruebadef2', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\" OR id_linea=\"3\"  order by id_linea desc ;'),
-(31, 'pruebadef3', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea asc ;'),
-(36, 'esteban', 'SELECT id_linea as linea , nombre as esteban FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea asc;'),
-(37, 'ejemplo36', 'SELECT  * FROM linea    ;'),
-(38, 'pruebafinal', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  group by id_linea;');
+create table cuenta(
+	idCuenta varchar(15),
+	nombre varchar(65),
+	idTipoCuenta varchar(15), -- foranea con Tipo Cuenta
+	estado varchar(1) ,-- A-Activo , I-Inactivo
 
---
--- Índices para tablas volcadas
+	primary key (idCuenta),
+	foreign key (idTipoCuenta) references tipoCuenta (idTipoCuenta)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
--- Indices de la tabla `factura_header`
---
-ALTER TABLE `factura_header`
-  ADD PRIMARY KEY (`id_factura_header`),
-  ADD KEY `id_proveedor` (`id_proveedor`);
+create table tipoPoliza(
+	idTipoPoliza varchar(15),
+	descripcion varchar(65),
+	estado varchar(1), -- A-Activo , I-Inactivo
 
---
--- Indices de la tabla `linea`
---
-ALTER TABLE `linea`
-  ADD PRIMARY KEY (`id_linea`),
-  ADD KEY `fklineamarca` (`id_marca`);
+	primary key (idTipoPoliza)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indices de la tabla `marca`
---
-ALTER TABLE `marca`
-  ADD PRIMARY KEY (`id_marca`),
-  ADD KEY `fkmarcaproveedor` (`id_proveedor`);
+create table polizaEncabezado(
+	idPolizaEncabezado varchar(15),
+	fechaPoliza date,
+	idTipoPoliza varchar(15), -- foranea con tipo poliza
+	concepto varchar(65),
 
---
--- Indices de la tabla `proveedores`
---
-ALTER TABLE `proveedores`
-  ADD PRIMARY KEY (`id_proveedor`);
+	primary key(idPolizaEncabezado,fechaPoliza),
+    
+	foreign key (idTipoPoliza) references tipoPoliza (idTipoPoliza)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indices de la tabla `registro_compra`
---
-ALTER TABLE `registro_compra`
-  ADD PRIMARY KEY (`id_registro`),
-  ADD KEY `id_factura_header` (`id_factura_header`);
+create table tipoOperacion(
+	idTipoOperacion varchar(15),
+	nombre varchar(65), 
+	estado varchar(1),-- A-Activo , I-Inactivo
 
---
--- Indices de la tabla `registro_consultas`
---
-ALTER TABLE `registro_consultas`
-  ADD PRIMARY KEY (`id_registro`);
+	primary key (idTipoOperacion)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
--- AUTO_INCREMENT de la tabla `factura_header`
---
-ALTER TABLE `factura_header`
-  MODIFY `id_factura_header` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `linea`
---
-ALTER TABLE `linea`
-  MODIFY `id_linea` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `marca`
---
-ALTER TABLE `marca`
-  MODIFY `id_marca` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `proveedores`
---
-ALTER TABLE `proveedores`
-  MODIFY `id_proveedor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `registro_compra`
---
-ALTER TABLE `registro_compra`
-  MODIFY `id_registro` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `registro_consultas`
---
-ALTER TABLE `registro_consultas`
-  MODIFY `id_registro` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
---
--- Restricciones para tablas volcadas
---
--- Filtros para la tabla `factura_header`
---
-ALTER TABLE `factura_header`
-  ADD CONSTRAINT `factura_header_ibfk_1` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedores` (`id_proveedor`);
-
---
--- Filtros para la tabla `linea`
---
-ALTER TABLE `linea`
-  ADD CONSTRAINT `linea_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`);
-
---
--- Filtros para la tabla `marca`
---
-ALTER TABLE `marca`
-  ADD CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedores` (`id_proveedor`);
-
---
--- Filtros para la tabla `registro_compra`
---
-ALTER TABLE `registro_compra`
-  ADD CONSTRAINT `registro_compra_ibfk_1` FOREIGN KEY (`id_factura_header`) REFERENCES `factura_header` (`id_factura_header`);
+create table polizaDetalle(
+	idPolizaEncabezado varchar(15), 
+    fechaPoliza date,
+	idCuenta varchar(15), 		-- foranea con cuenta
+	saldo float,
+	idTipoOperacion varchar(15), -- debe/haber
+	
+	primary key(idPolizaEncabezado, fechaPoliza, idCuenta),
+    
+    foreign key (idPolizaEncabezado) references polizaEncabezado (idPolizaEncabezado),
+	foreign key (idCuenta) references Cuenta (idCuenta),
+	foreign key (idTipoOperacion) references tipoOperacion (idTipoOperacion)
+	
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
