@@ -152,9 +152,20 @@ CREATE TABLE usuarioAplicacionAsignados(
 	FOREIGN KEY (fkIdUsuario) REFERENCES Usuario (pkId)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- ------------------------------------------------------------------------------------------------------------
+-- REPORTEADOR
+-- ------------------------------------------------------------------------------------------------------------
+create table reporte (
+	idReporte int NOT NULL primary key,
+	nombre varchar(20) NOT NULL,
+	ruta varchar(100) NOT NULL,
+    idAplicacion VARCHAR(15) not null,
+	estado varchar(1) NOT NULL,
+    foreign key (idAplicacion) references aplicacion(pkId)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 -- ------------------------------------------------------------------------------------------------------------
--- 												CONSULTAS INTELIGENTES
+-- CONSULTAS INTELIGENTES
 -- ------------------------------------------------------------------------------------------------------------
 CREATE TABLE registro_consultas (
    id_registro int primary key auto_increment NOT NULL,
@@ -164,7 +175,7 @@ CREATE TABLE registro_consultas (
 
 
 -- ------------------------------------------------------------------------------------------------------------
--- 							MÓDULO CONTABILIDAD - PÓLIZAS
+-- MÓDULO CONTABILIDAD - PÓLIZAS
 -- ------------------------------------------------------------------------------------------------------------
 create table tipoCuenta(
 	idTipoCuenta varchar(15), -- si es activo o pasivo
