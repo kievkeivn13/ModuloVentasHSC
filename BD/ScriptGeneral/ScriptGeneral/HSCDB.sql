@@ -236,3 +236,58 @@ create table polizaDetalle(
 	foreign key (idTipoOperacion) references tipoOperacion (idTipoOperacion)
 	
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+-- ------------------------------------------------------------------------------------------------------------
+-- 	TABLAS GENERALES
+-- ------------------------------------------------------------------------------------------------------------
+
+create table tipoCliente(                      /*Huésped, Invitado(consumidor)*/
+	idTipo varchar(15) primary key not null,
+    nombre varchar(35) not null,
+    estatus char(1) not null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+create table Cliente(
+Pkid varchar(15) primary key,
+Nombre varchar(30) not null,
+idTipo varchar(15) not null,
+Apellido varchar(30) not null,
+Nit varchar(15) not null,
+Telefono varchar(15) not null,
+Direccion varchar(50) not null,
+Correo varchar(50) not null,
+Estatus varchar(1),
+
+foreign key (idTipo) references tipoCliente(idTipo)
+)engine=InnoDB DEFAULT CHARSET=latin1;
+
+
+create table FormaPago(
+Pkid varchar(15) primary key,
+Nombre varchar(30) not null,
+Estatus varchar(1)
+)engine=InnoDB DEFAULT CHARSET=latin1;
+
+create table TipoInventario(
+Pkid varchar(15) primary key,
+Nombre varchar(30) not null,
+Estatus varchar(1)
+)engine=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- NECESITA TABLA SUCURSAL
+/*
+create table Inventario(
+Pkid varchar(15) primary key,
+fkidsucursal varchar(15) not null,
+Fktipoinventario varchar(15) not null,
+fkidbodega varchar(15) NOT NULL,
+
+foreign key (Fktipoinventario) references TipoInventario (Pkid),
+foreign key (Fkidsucursal) references sucursal (idsucursal),
+foreign key (Fkidbodega) references bodega (pkid)
+)engine=InnoDB DEFAULT CHARSET=latin1;
+*/
+
+
