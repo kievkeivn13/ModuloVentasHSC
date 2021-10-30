@@ -5,31 +5,31 @@ IdBanco varchar(15) NOT NULL,
 PRIMARY KEY (IdBanco),
 nombreBanco varchar(20) NOT NULL,
 direccionBanco varchar(25) NOT NULL
-)ENGINE = InnoDB;
+)engine=InnoDB DEFAULT CHARSET=latin1;
 
 Create Table CuentasBancos (
 IdCuenta varchar(15) NOT NULL,
-PRIMARY KEY (idCuentaB),
+PRIMARY KEY (IdCuenta),
 FkidBanco varchar(15) not null,
 nombreCuentaB varchar(20) NOT NULL,
 tipoCuentaB varchar(25) NOT NULL,
 direccionCuentaB varchar(25) NOT NULL,
 EstadoCuentaB varchar(1) not null,
 foreign key (FkidBanco) references Banco(IdBanco)
-)ENGINE = InnoDB;
+)engine=InnoDB DEFAULT CHARSET=latin1;
 
 
 create table Moneda(
-Pkid varchar(15) primary key,
+Pkid varchar(15) primary key NOT NULL,
 nombreMoneda varchar(30) not null,
 estadoMoneda varchar(1)
-)engine=InnoDB;
+)engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table TipoCambio (
-idTipoc varchar(15) primary key,
+idTipoc varchar(15) primary key NOT NULL,
 fkidMoneda varchar(15) not null,
 fechaTipoC date not null,
 cambioTipoC float not null,
 
-foreign key (fkidMoneda) references Moneda(idMoneda)
-)engine=InnoDB;
+foreign key (fkidMoneda) references Moneda(Pkid)
+)engine=InnoDB DEFAULT CHARSET=latin1;

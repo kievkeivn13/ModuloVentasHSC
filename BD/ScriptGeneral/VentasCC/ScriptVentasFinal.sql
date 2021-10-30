@@ -1,13 +1,8 @@
-
-
 use hotelsancarlos;
 
 -- ------------------------------------------------------------------------------------------------------------
 -- 							MÓDULO VENTAS Y CUENTAS POR COBRAR
 -- ------------------------------------------------------------------------------------------------------------
-
-
-/*
 create table clienteEmpresa(
 fkidcliente varchar(15) not null,
 fkidempresa varchar(15) not null,
@@ -15,7 +10,7 @@ fkidempresa varchar(15) not null,
 foreign key (fkidcliente) references cliente(pkid),
 foreign key (fkidempresa) references empresa(idempresa)
 )engine=InnoDB DEFAULT CHARSET=latin1;
-*/
+
 
 create table fraccionamiento(
 Pkid varchar(15) primary key,
@@ -43,36 +38,36 @@ Nombre varchar(30) not null,
 Cantidad float not null,
 Estatus varchar(1) not null
 )engine=InnoDB DEFAULT CHARSET=latin1;
-/*
-create table cuentasporCobrar(
-Pkid varchar(15) primary key,
-Fkcliente varchar(15) not null,
-Fechaemision date not null,
-Fechavencimiento date not null,
-Fkfraccionamiento varchar(15) not null,
-Fktipodocumento varchar(15) not null,
-Fkformapago varchar(15),
-Fkcaja varchar(15),
-Fkmoneda varchar(15),
-Fkbanco varchar(15),
-Fkcuentabancaria varchar(15),
-Fkmora varchar(15) not null,
-Totalmonto float not null,
-Faltantemonto float not null,
-Abono float not null,
-Estatus varchar(1),
 
-foreign key (Fkcliente) references Cliente (Pkid),
-foreign key (Fkfraccionamiento) references Fraccionamiento (Pkid),
-foreign key (Fktipodocumento) references TipoDocumento (Pkid),
-foreign key (Fkformapago) references FormaPago (PKid),
-foreign key (Fkcaja) references Caja (Pkid),
-foreign key (Fkmoneda) references Moneda (Pkid),
-foreign key (Fkbanco) references banco (IdBanco),
-foreign key (Fkmora) references Mora (Pkid),
-foreign key (Fkcuentabancaria) references CuentasBancos (IdCuenta)
+create table cuentasporCobrar(
+	Pkid varchar(15) primary key,
+	Fkcliente varchar(15) not null,
+	Fechaemision date not null,
+	Fechavencimiento date not null,
+	Fkfraccionamiento varchar(15) not null,
+	Fktipodocumento varchar(15) not null,
+	Fkformapago varchar(15),
+	Fkcaja varchar(15),
+	Fkmoneda varchar(15),
+	Fkbanco varchar(15),
+	Fkcuentabancaria varchar(15),
+	Fkmora varchar(15) not null,
+	Totalmonto float not null,
+	Faltantemonto float not null,
+	Abono float not null,
+	Estatus varchar(1),
+
+	foreign key (Fkcliente) references Cliente (Pkid),
+	foreign key (Fkfraccionamiento) references Fraccionamiento (Pkid),
+	foreign key (Fktipodocumento) references TipoDocumento (Pkid),
+	foreign key (Fkformapago) references FormaPago (PKid),
+	foreign key (Fkcaja) references Caja (Pkid),
+	foreign key (Fkmoneda) references moneda(Pkid),
+	foreign key (Fkbanco) references banco (IdBanco),
+	foreign key (Fkmora) references Mora (Pkid),
+	foreign key (Fkcuentabancaria) references CuentasBancos (IdCuenta)
 )engine=InnoDB DEFAULT CHARSET=latin1;
-*/
+
 create table tipoBodega(
 pkid varchar(15) primary key,
 nombre varchar(30) not null,
