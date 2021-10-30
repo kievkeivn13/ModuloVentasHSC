@@ -9,11 +9,33 @@ USE hotelSanCarlos;
 -- ------------------------------------------------------------------------------------------------------------
 -- 	COMPONENTE SEGURIDAD
 -- ------------------------------------------------------------------------------------------------------------
-CREATE TABLE empleado(
-	pkIdEmpleado varchar(15) PRIMARY KEY,
-	nombre varchar(25) NOT NULL,
-	apellido varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE puesto (
+  pkIdPuesto VARCHAR(11) PRIMARY KEY,
+  nombre VARCHAR(45) NULL DEFAULT NULL,
+  añosDeExperiencia INT NULL DEFAULT NULL,
+  fkIdPuestoSuperior VARCHAR(11) NOT NULL,
+
+ FOREIGN KEY (fkIdPuestoSuperior) REFERENCES puesto (pkIdPuesto))
+ ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+ 
+
+CREATE TABLE empleado (
+  pkIdEmpleado VARCHAR(11) PRIMARY KEY,
+  nombre VARCHAR(45) NULL DEFAULT NULL,
+  apellido VARCHAR(45) NULL DEFAULT NULL,
+  fechaDeNacimiento VARCHAR(45) NULL DEFAULT NULL,
+  sueldo FLOAT NULL DEFAULT NULL,
+  correo VARCHAR(45) NULL DEFAULT NULL,
+  direccion VARCHAR(45) NULL DEFAULT NULL,
+  contratado VARCHAR(45) NULL DEFAULT NULL,
+  añosDeExperiencia VARCHAR(45) NULL DEFAULT NULL,
+  telefono VARCHAR(45) NULL DEFAULT NULL,
+  fkIdPuesto VARCHAR(11) NOT NULL,
+  
+  FOREIGN KEY (fkIdPuesto) REFERENCES puesto (pkIdPuesto))
+  ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE usuario(
 	pkId VARCHAR(15) PRIMARY KEY,
@@ -289,5 +311,4 @@ foreign key (Fkidsucursal) references sucursal (idsucursal),
 foreign key (Fkidbodega) references bodega (pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 */
-
 
