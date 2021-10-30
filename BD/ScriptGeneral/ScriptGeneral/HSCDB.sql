@@ -6,6 +6,28 @@
 CREATE DATABASE hotelSanCarlos;
 USE hotelSanCarlos;
 
+create table empresa(
+	idEmpresa varchar(15) primary key not null,
+	nit varchar(13) not null,
+    nombre varchar(35) not null,
+    direccion text not null,
+    telefono int(10) not null,
+    estatus char(1) not null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+create table sucursal(
+	idSucursal varchar(15) primary key not null,
+	idEmpresa varchar(15) not null,
+    nombre varchar(35) not null,
+    direccion text not null,
+    telefono int(10) not null,
+    codigoPostal int not null,
+    estatus char(1) not null,
+    
+    foreign key (idEmpresa) references empresa (idEmpresa)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 -- ------------------------------------------------------------------------------------------------------------
 -- 	COMPONENTE SEGURIDAD
 -- ------------------------------------------------------------------------------------------------------------
@@ -14,15 +36,14 @@ CREATE TABLE puesto (
   pkIdPuesto VARCHAR(11) PRIMARY KEY,
   nombre VARCHAR(45) NULL DEFAULT NULL,
   añosDeExperiencia INT NULL DEFAULT NULL,
-  fkIdPuestoSuperior VARCHAR(11) NOT NULL,
+  fkIdPuestoSuperior VARCHAR(11) NOT NULL
 
- FOREIGN KEY (fkIdPuestoSuperior) REFERENCES puesto (pkIdPuesto))
- ENGINE=InnoDB DEFAULT CHARSET=latin1;
- 
+ -- FOREIGN KEY (fkIdPuestoSuperior) REFERENCES puesto (pkIdPuesto))
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
  
 
 CREATE TABLE empleado (
-  pkIdEmpleado VARCHAR(11) PRIMARY KEY,
+  pkIdEmpleado VARCHAR(15) PRIMARY KEY,
   nombre VARCHAR(45) NULL DEFAULT NULL,
   apellido VARCHAR(45) NULL DEFAULT NULL,
   fechaDeNacimiento VARCHAR(45) NULL DEFAULT NULL,
@@ -32,10 +53,12 @@ CREATE TABLE empleado (
   contratado VARCHAR(45) NULL DEFAULT NULL,
   añosDeExperiencia VARCHAR(45) NULL DEFAULT NULL,
   telefono VARCHAR(45) NULL DEFAULT NULL,
-  fkIdPuesto VARCHAR(11) NOT NULL,
+  fkIdPuesto VARCHAR(15) NOT NULL,
+  fkIdEmpresa VARCHAR(15) NOT NULL,
   
-  FOREIGN KEY (fkIdPuesto) REFERENCES puesto (pkIdPuesto))
-  ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  FOREIGN KEY (fkIdPuesto) REFERENCES puesto (pkIdPuesto),
+  FOREIGN KEY (fkIdEmpresa) REFERENCES empresa (IdEmpresa)
+  )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE usuario(
 	pkId VARCHAR(15) PRIMARY KEY,
@@ -178,7 +201,7 @@ CREATE TABLE usuarioAplicacionAsignados(
 -- REPORTEADOR
 -- ------------------------------------------------------------------------------------------------------------
 create table reporte (
-	idReporte int NOT NULL primary key,
+	idReporte varchar(15) NOT NULL primary key,
 	nombre varchar(20) NOT NULL,
 	ruta varchar(100) NOT NULL,
     idAplicacion VARCHAR(15) not null,
