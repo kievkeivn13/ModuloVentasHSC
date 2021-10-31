@@ -231,13 +231,21 @@ create table tipoCuenta(
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 create table cuenta(
-	idCuenta varchar(15),
-	nombre varchar(65),
-	idTipoCuenta varchar(15), -- foranea con Tipo Cuenta
+	idCuenta varchar(15), -- Identificador de la cuenta
+	nombre varchar(65), -- Nombre de la cuenta
+	idTipoCuenta varchar(15), -- foránea con Tipo Cuenta, se utiliza para los estados financieros
+    cargo float default 0, -- cargo de la cuenta, inicia en 0 al crear la cuenta
+    abono float default 0, -- abono de la cuenta, inicia en 0 al crear la cuenta
+    saldoAcumulado float default 0, -- Saldo acumulado en la cuenta, inicia en 0 al crear la cuenta
 	estado varchar(1) ,-- A-Activo , I-Inactivo
-
+    -- Se usa Recursividad -> Para indicar el padre de la cuenta
+    idCuentaPadre varchar(15) default null,
+    -- Primaria
 	primary key (idCuenta),
-	foreign key (idTipoCuenta) references tipoCuenta (idTipoCuenta)
+	-- Foránea
+    foreign key (idTipoCuenta) references tipoCuenta (idTipoCuenta),
+	-- Foránea
+    foreign key (idCuentaPadre) references cuenta (idCuenta)
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 create table tipoPoliza(
@@ -252,7 +260,7 @@ create table polizaEncabezado(
 	idPolizaEncabezado varchar(15),
 	fechaPoliza date,
 	idTipoPoliza varchar(15), -- foranea con tipo poliza
-	concepto varchar(65),
+	
 
 	primary key(idPolizaEncabezado,fechaPoliza),
     
@@ -273,6 +281,7 @@ create table polizaDetalle(
 	idCuenta varchar(15), 		-- foranea con cuenta
 	saldo float,
 	idTipoOperacion varchar(15), -- debe/haber
+	concepto varchar(65),
 	
 	primary key(idPolizaEncabezado, fechaPoliza, idCuenta),
     
@@ -335,3 +344,11 @@ foreign key (Fkidbodega) references bodega (pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 */
 
+-- el impuesto y su %, lo calcula cada módulo según los que le apliquen
+create table impuesto(
+	idImpuesto varchar(15), -- ID del impuesto que cada módulo podra usar
+    nombre varchar(65), -- el nombre del impuesto, ej: IVA
+    porcentaje float, -- Porcentaje del impuesto, Ej el IVA que es del 12% se ingresa como 0.12, asi con los demás
+    estado varchar(1), -- A activo, I inactivo
+    primary key(idImpuesto) -- primaria del impuesto
+)ENGINE = InnoDB DEFAULT CHARSET=latin1;
