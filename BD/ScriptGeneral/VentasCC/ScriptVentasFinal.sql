@@ -1,42 +1,39 @@
 use hotelsancarlos;
-
 -- ------------------------------------------------------------------------------------------------------------
 -- 							MÓDULO VENTAS Y CUENTAS POR COBRAR
 -- ------------------------------------------------------------------------------------------------------------
 create table clienteEmpresa(
-fkidcliente varchar(15) not null,
-fkidempresa varchar(15) not null,
+	fkidcliente varchar(15) not null,
+	fkidempresa varchar(15) not null,
 
-foreign key (fkidcliente) references cliente(pkid),
-foreign key (fkidempresa) references empresa(idempresa)
+	foreign key (fkidcliente) references cliente(pkid),
+	foreign key (fkidempresa) references empresa(idempresa)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-
 create table fraccionamiento(
-Pkid varchar(15) primary key,
-Nombre varchar(30) not null,
-Cuotas int not null,
-Estatus varchar(1)
+	Pkid varchar(15) primary key,
+	Nombre varchar(30) not null,
+	Cuotas int not null,
+	Estatus varchar(1)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table tipoDocumento(
-Pkid varchar(15) primary key,
-Nombre varchar(30) not null,
-Estatus varchar(1)
+	Pkid varchar(15) primary key,
+	Nombre varchar(30) not null,
+	Estatus varchar(1)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-
 create table caja(
-Pkid varchar(15) primary key,
-Nombre varchar(30) not null,
-Estatus varchar(1)
+	Pkid varchar(15) primary key,
+	Nombre varchar(30) not null,
+	Estatus varchar(1)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table mora(
-Pkid varchar(15) primary key,
-Nombre varchar(30) not null,
-Cantidad float not null,
-Estatus varchar(1) not null
+	Pkid varchar(15) primary key,
+	Nombre varchar(30) not null,
+	Cantidad float not null,
+	Estatus varchar(1) not null
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table cuentasporCobrar(
@@ -68,164 +65,120 @@ create table cuentasporCobrar(
 	foreign key (Fkcuentabancaria) references CuentasBancos (IdCuenta)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-create table tipoBodega(
-pkid varchar(15) primary key,
-nombre varchar(30) not null,
-estado varchar(1) not null
-)engine=InnoDB DEFAULT CHARSET=latin1;
-
-create table bodega(
-pkid varchar(15) primary key,
-fkidTipobodega varchar(15) not null,
-nombre varchar(30) not null,
-direccion varchar(65) not null,
-estado varchar(1) not null,
-
-foreign key (fkidTipobodega) references Tipobodega(pkid)
-
-)engine=InnoDB DEFAULT CHARSET=latin1;
-
-/*
-CREATE TABLE `marca` (
-  `idMarca` varchar(15) primary key,
-  `nombre` varchar(100) DEFAULT NULL,
-  `descripcion` varchar(500) DEFAULT NULL,
-  `idProveedor` varchar(15) not null,
-  
-  foreign key (id_proveedor) references proveedores(id_proveedor)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-create table producto (
-pkid varchar(15) primary key,
-fkinventario varchar(15) not null,
-Nombre varchar(30) not null,
-Fkidmarca varchar(15) not null,
-Fkidlinea varchar(15) not null,
-Stock int not null,
-Costo float not null,
-Precio float not null,
-Estatus varchar(1),
-
-foreign key (Fkidmarca) references marca (id_marca),
-foreign key (Fkidlinea) references linea (id_linea),
-foreign key (fkinventario)  references inventario (pkid)
-)engine=InnoDB DEFAULT CHARSET=latin1;
-*/
 
 create table cotizacionEncabezado(
-Pkid varchar(15) primary key,
-Fkidcliente varchar(15) not null,
-Fechaemision date not null,
-Fechavencimiento date not null,
-Total float not null,
+	Pkid varchar(15) primary key,
+	Fkidcliente varchar(15) not null,
+	Fechaemision date not null,
+	Fechavencimiento date not null,
+	Total float not null,
 
-foreign key (Fkidcliente) references Cliente (Pkid)
+	foreign key (Fkidcliente) references Cliente (Pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
+
 /*
 create table cotizacionDetalle(
-Pkid varchar(15) primary key,
-Fkencabezado varchar(15) not null,
-Fkidproducto varchar(15),
+	Pkid varchar(15) primary key,
+	Fkencabezado varchar(15) not null,
+	Fkidproducto varchar(15),
 
-
-foreign key (Fkencabezado) references Cliente (Pkid),
-foreign key (Fkidproducto) references Producto (Pkid)
-
+	foreign key (Fkencabezado) references Cliente (Pkid),
+	foreign key (Fkidproducto) references Producto (pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 */
 
 create table facturacionEncabezado(
-Pkid varchar(15) primary key,
-Fkidcliente varchar(15) not null,
-Fkidempleado varchar(15) not null, #SUJETO A CAMBIOS
-Fechaemision date not null,
-Fkidcotizacion varchar(15),
-impuestoTurismo float,
-Total float not null,
-estatus varchar(1) not null,
+	Pkid varchar(15) primary key,
+	Fkidcliente varchar(15) not null,
+	Fkidempleado varchar(15) not null, #SUJETO A CAMBIOS
+	Fechaemision date not null,
+	Fkidcotizacion varchar(15),
+	impuestoTurismo float,
+	Total float not null,
+	estatus varchar(1) not null,
 
-foreign key (Fkidcliente) references Cliente (Pkid),
-foreign key (Fkidempleado) references Empleado (pkidempleado),
-foreign key (Fkidcotizacion) references CotizacionEncabezado (Pkid)
+	foreign key (Fkidcliente) references Cliente (Pkid),
+	foreign key (Fkidempleado) references Empleado (pkidempleado),
+	foreign key (Fkidcotizacion) references CotizacionEncabezado (Pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 /*
 create table facturacionDetalle(
-Pkid varchar(15) primary key,
-Fkencabezado varchar(15) not null,
-Fkidproducto varchar(15),
+	Pkid varchar(15) primary key,
+	Fkencabezado varchar(15) not null,
+	Fkidproducto varchar(15),
 
-subtotal float not null,
-iva float not null,
-
-foreign key (Fkencabezado) references Cliente (Pkid),
-foreign key (Fkidproducto) references Producto (Pkid)
+	subtotal float not null,
+	iva float not null,
+	
+	foreign key (Fkencabezado) references Cliente (Pkid),
+	foreign key (Fkidproducto) references Producto (Pkid)
 
 )engine=InnoDB DEFAULT CHARSET=latin1;
 */
+
 create table comision(
-Pkid varchar(15) primary key,
-nombre varchar(30) not null,
-porcentaje float not null,
-estado varchar(1) not null
+	Pkid varchar(15) primary key,
+	nombre varchar(30) not null,
+	porcentaje float not null,
+	estado varchar(1) not null
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table comisionAsignadaEncabezado(
-Pkid varchar(15) primary key,
-Fkidempleado varchar(15),
-Comisionesmes float not null,
-FechaComisiones date,
-
-foreign key (Fkidempleado) references Empleado(pkidempleado) 
+	Pkid varchar(15) primary key,
+	Fkidempleado varchar(15),
+	Comisionesmes float not null,
+	FechaComisiones date,
+	
+	foreign key (Fkidempleado) references Empleado(pkidempleado) 
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table comisionAsignadaDetalle(
-Pkid varchar(15) primary key,
-FkidEncabezado varchar(15) not null,
-Fkidfactura varchar(15) not null,
-FkidComision varchar(15) not null,
-Montofactura float not null,
-Cantidadcomision float not null,
+	Pkid varchar(15) primary key,
+	FkidEncabezado varchar(15) not null,
+	Fkidfactura varchar(15) not null,
+	FkidComision varchar(15) not null,
+	Montofactura float not null,
+	Cantidadcomision float not null,
 
-foreign key (FkidEncabezado) references ComisionAsignadaEncabezado(Pkid),
-foreign key (Fkidfactura) references FacturacionEncabezado(Pkid),
-foreign key (FkidComision) references Comision(Pkid)
+	foreign key (FkidEncabezado) references ComisionAsignadaEncabezado(Pkid),
+	foreign key (Fkidfactura) references FacturacionEncabezado(Pkid),
+	foreign key (FkidComision) references Comision(Pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table pedidoEncabezado(
-pkid varchar(15) primary key,
-fkidCliente varchar(15),
-fkidBodega varchar(15) not null,
-fechapedido datetime not null,
-fechamaxentrega datetime not null,
-estado varchar(1) not null,
-foreign key (fkidBodega) references Bodega(pkid),
-foreign key (fkidCliente) references Cliente(pkid)
+	pkid varchar(15) primary key,
+	fkidCliente varchar(15),
+	fkidBodega varchar(15) not null,
+	fechapedido datetime not null,
+	fechamaxentrega datetime not null,
+	estado varchar(1) not null,
+	foreign key (fkidBodega) references Bodega(pkid),
+	foreign key (fkidCliente) references Cliente(pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 /*
 create table pedidoDetalle(
-pkid varchar(15) primary key,
-fkidpedido varchar(15) not null,
-cantidad int not null,
-fkidproducto varchar(15) not null,
-foreign key (fkidpedido) references PedidoEncabezado(pkid),
-foreign key (fkidproducto) references Producto(pkid)
+	pkid varchar(15) primary key,
+	fkidpedido varchar(15) not null,
+	cantidad int not null,
+	fkidproducto varchar(15) not null,
+	foreign key (fkidpedido) references PedidoEncabezado(pkid),
+	foreign key (fkidproducto) references Producto(pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 */
 create table movimientoMotivo(
-Pkid varchar(15) primary key,
-Movimiento varchar(15),    
-Estado varchar(1) not null
+	Pkid varchar(15) primary key,
+	Movimiento varchar(15),    
+	Estado varchar(1) not null
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
 create table movimientoInventario(
-Pkid varchar(15) primary key,                #id del movimiento
-Fkiddocumento varchar(15) not null,              #Se guarda el id del documento donde se realizó la operacion
-Cantidad int not null,                    #Cantidad de inventario que se movió
-Fkidmotivo varchar(15) not null,              #id del  motivo del movimiento
-FechaMovimiento date not null,
-foreign key (Fkidmotivo) references MovimientoMotivo(Pkid),
-foreign key (Fkiddocumento) references FacturacionEncabezado(Pkid)
+	Pkid varchar(15) primary key,                #id del movimiento
+	Fkiddocumento varchar(15) not null,              #Se guarda el id del documento donde se realizó la operacion
+	Cantidad int not null,                    #Cantidad de inventario que se movió
+	Fkidmotivo varchar(15) not null,              #id del  motivo del movimiento
+	FechaMovimiento date not null,
+	foreign key (Fkidmotivo) references MovimientoMotivo(Pkid),
+	foreign key (Fkiddocumento) references FacturacionEncabezado(Pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
-

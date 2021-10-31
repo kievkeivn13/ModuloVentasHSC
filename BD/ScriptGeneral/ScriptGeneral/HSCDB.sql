@@ -1,11 +1,13 @@
 -- --------------------------
 # LDD Database hotelSanCarlos
 -- --------------------------
-
 -- DROP DATABASE hotelSanCarlos;
 CREATE DATABASE hotelSanCarlos;
 USE hotelSanCarlos;
 
+-- ------------------------------------------------------------------------------------------------------------
+-- 	TABLAS GENERALES
+-- ------------------------------------------------------------------------------------------------------------
 create table empresa(
 	idEmpresa varchar(15) primary key not null,
 	nit varchar(13) not null,
@@ -27,11 +29,6 @@ create table sucursal(
     foreign key (idEmpresa) references empresa (idEmpresa)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
--- ------------------------------------------------------------------------------------------------------------
--- 	COMPONENTE SEGURIDAD
--- ------------------------------------------------------------------------------------------------------------
-
 CREATE TABLE puesto (
   pkIdPuesto VARCHAR(11) PRIMARY KEY,
   nombre VARCHAR(45) NULL DEFAULT NULL,
@@ -42,22 +39,27 @@ CREATE TABLE puesto (
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
  
 
+-- ------------------------------------------------------------------------------------------------------------
+-- 	COMPONENTE SEGURIDAD
+-- ------------------------------------------------------------------------------------------------------------
 CREATE TABLE empleado (
-  pkIdEmpleado VARCHAR(15) PRIMARY KEY,
-  nombre VARCHAR(45) NULL DEFAULT NULL,
-  apellido VARCHAR(45) NULL DEFAULT NULL,
-  fechaDeNacimiento VARCHAR(45) NULL DEFAULT NULL,
-  sueldo FLOAT NULL DEFAULT NULL,
-  correo VARCHAR(45) NULL DEFAULT NULL,
-  direccion VARCHAR(45) NULL DEFAULT NULL,
-  contratado VARCHAR(45) NULL DEFAULT NULL,
-  añosDeExperiencia VARCHAR(45) NULL DEFAULT NULL,
-  telefono VARCHAR(45) NULL DEFAULT NULL,
-  fkIdPuesto VARCHAR(15) NOT NULL,
-  fkIdEmpresa VARCHAR(15) NOT NULL,
+	pkIdEmpleado VARCHAR(15) PRIMARY KEY,
+	nombre VARCHAR(45) NULL DEFAULT NULL,
+	apellido VARCHAR(45) NULL DEFAULT NULL,
+	fechaDeNacimiento VARCHAR(45) NULL DEFAULT NULL,
+	sueldo FLOAT NULL DEFAULT NULL,
+	correo VARCHAR(45) NULL DEFAULT NULL,
+	direccion VARCHAR(45) NULL DEFAULT NULL,
+	contratado VARCHAR(45) NULL DEFAULT NULL,
+	añosDeExperiencia VARCHAR(45) NULL DEFAULT NULL,
+	telefono VARCHAR(45) NULL DEFAULT NULL,
+    inicioDeContrato DATETIME NULL,
+	finDeContrato DATETIME NULL,
+	fkIdPuesto VARCHAR(15) NOT NULL,
+	fkIdEmpresa VARCHAR(15) NOT NULL,
   
-  FOREIGN KEY (fkIdPuesto) REFERENCES puesto (pkIdPuesto),
-  FOREIGN KEY (fkIdEmpresa) REFERENCES empresa (IdEmpresa)
+	FOREIGN KEY (fkIdPuesto) REFERENCES puesto (pkIdPuesto),
+	FOREIGN KEY (fkIdEmpresa) REFERENCES empresa (IdEmpresa)
   )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE usuario(
@@ -218,7 +220,6 @@ CREATE TABLE registro_consultas (
    consulta varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
 -- ------------------------------------------------------------------------------------------------------------
 -- MÓDULO CONTABILIDAD - PÓLIZAS
 -- ------------------------------------------------------------------------------------------------------------
@@ -294,7 +295,6 @@ create table polizaDetalle(
 -- ------------------------------------------------------------------------------------------------------------
 -- 	TABLAS GENERALES
 -- ------------------------------------------------------------------------------------------------------------
-
 create table tipoCliente(                      /*Huésped, Invitado(consumidor)*/
 	idTipo varchar(15) primary key not null,
     nombre varchar(35) not null,
@@ -302,47 +302,31 @@ create table tipoCliente(                      /*Huésped, Invitado(consumidor)*
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-create table Cliente(
-Pkid varchar(15) primary key,
-Nombre varchar(30) not null,
-idTipo varchar(15) not null,
-Apellido varchar(30) not null,
-Nit varchar(15) not null,
-Telefono varchar(15) not null,
-Direccion varchar(50) not null,
-Correo varchar(50) not null,
-Estatus varchar(1),
+create table cliente(
+	Pkid varchar(15) primary key,
+	nombre varchar(30) not null,
+	idTipo varchar(15) not null,
+	apellido varchar(30) not null,
+	nit varchar(15) not null,
+	telefono varchar(15) not null,
+	direccion varchar(50) not null,
+	correo varchar(50) not null,
+	estatus varchar(1),
 
 foreign key (idTipo) references tipoCliente(idTipo)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-
-create table FormaPago(
-Pkid varchar(15) primary key,
-Nombre varchar(30) not null,
-Estatus varchar(1)
+create table formaPago(
+	Pkid varchar(15) primary key,
+	nombre varchar(30) not null,
+	estatus varchar(1)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-create table TipoInventario(
-Pkid varchar(15) primary key,
-Nombre varchar(30) not null,
-Estatus varchar(1)
+create table tipoInventario(
+	Pkid varchar(15) primary key,
+	nombre varchar(30) not null,
+	estatus varchar(1)
 )engine=InnoDB DEFAULT CHARSET=latin1;
-
-
--- NECESITA TABLA SUCURSAL
-/*
-create table Inventario(
-Pkid varchar(15) primary key,
-fkidsucursal varchar(15) not null,
-Fktipoinventario varchar(15) not null,
-fkidbodega varchar(15) NOT NULL,
-
-foreign key (Fktipoinventario) references TipoInventario (Pkid),
-foreign key (Fkidsucursal) references sucursal (idsucursal),
-foreign key (Fkidbodega) references bodega (pkid)
-)engine=InnoDB DEFAULT CHARSET=latin1;
-*/
 
 -- el impuesto y su %, lo calcula cada módulo según los que le apliquen
 create table impuesto(
@@ -352,3 +336,75 @@ create table impuesto(
     estado varchar(1), -- A activo, I inactivo
     primary key(idImpuesto) -- primaria del impuesto
 )ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+create table tipoBodega(
+	pkid varchar(15) primary key,
+	nombre varchar(30) not null,
+	estado varchar(1) not null
+)engine=InnoDB DEFAULT CHARSET=latin1;
+
+create table bodega(
+	pkid varchar(15) primary key,
+	fkidTipobodega varchar(15) not null,
+	nombre varchar(30) not null,
+	direccion varchar(65) not null,
+	estado varchar(1) not null,
+	
+    foreign key (fkidTipobodega) references Tipobodega(pkid)
+)engine=InnoDB DEFAULT CHARSET=latin1;
+
+create table proveedor(
+	idProveedor varchar(15),
+	nombre varchar(100) not NULL,
+	direccion varchar(500) not NULL,
+	telefono int not NULL,
+	email varchar(200) not NULL,
+	idEmpresa varchar(15),
+	stsproveedor varchar(1),
+	primary key (idProveedor),
+    
+	foreign key (idEmpresa) references empresa (idEmpresa)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE marca (
+	idMarca varchar(15),
+	nombre varchar(100) not NULL,
+	descripcion varchar(500) not NULL,
+	primary key (idMarca)
+ )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE linea (
+	idLinea varchar(15),
+	nombre varchar(100) not NULL,
+	descripcion varchar(500) not NULL,
+	idMarca varchar(15) not null,
+	primary key (idLinea),
+	foreign key (idMarca) references marca (idMarca)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+create table Inventario(
+	Pkid varchar(15) primary key,
+	fkidsucursal varchar(15) not null,
+	Fktipoinventario varchar(15) not null,
+	fkidbodega varchar(15) NOT NULL,
+
+	foreign key (Fktipoinventario) references TipoInventario (Pkid),
+	foreign key (Fkidsucursal) references sucursal (idsucursal),
+	foreign key (Fkidbodega) references bodega (pkid)
+)engine=InnoDB DEFAULT CHARSET=latin1;
+
+create table producto (
+	pkid varchar(15) primary key,
+	fkinventario varchar(15) not null,
+	Nombre varchar(30) not null,
+	Fkidlinea varchar(15) not null,
+	Stock int not null,
+    StockMaximo int not null,
+    StockMinimo int not null,
+	Costo float not null,
+	Precio float not null,
+	Estatus varchar(1),
+
+	foreign key (Fkidlinea) references linea (idLinea),
+	foreign key (fkinventario) references inventario (Pkid)
+)engine=InnoDB DEFAULT CHARSET=latin1;
