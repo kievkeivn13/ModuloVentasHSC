@@ -74,14 +74,14 @@ CREATE TABLE nominas (
 	fkIdEmpleado VARCHAR(11) NOT NULL,
 	año INT NULL,
 	mes VARCHAR(45) NULL,
-	diasLaborados VARCHAR(45) NULL,
-	horasOrdinarias VARCHAR(45) NULL,
-	horasExtraordinarias VARCHAR(45) NULL,
-	salarioTotal VARCHAR(45) NULL,
-	igss VARCHAR(45) NULL,
-	isr VARCHAR(45) NULL,
-	totalDeducciones VARCHAR(45) NULL,
-	salarioLiquido VARCHAR(45) NULL,
+	diasLaborados int NULL,
+	horasOrdinarias float NULL,
+	horasExtraordinarias float NULL,
+	salarioTotal float NULL,
+	igss float NULL,
+	isr float NULL,
+	totalDeducciones float NULL,
+	salarioLiquido float NULL,
 
 	FOREIGN KEY (fkIdEmpleado) REFERENCES empleado (pkIdEmpleado)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

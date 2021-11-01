@@ -1,10 +1,14 @@
 # ProyectoHSC22021
 Proyecto didáctico HSC
 
-Orden para generar las Bases de Datos:
+Orden para generar la Base de Datos:
 
 Correr:
 
-- Script General Base de Datos
-- Script de Bancos
-- Script de VentasCC
+- Script General (HSCDB)
+- ScriptBancos
+- ScriptCompras
+- Contabilidad
+- Hoteleria
+- RRHH
+- ScriptVentas
