@@ -95,7 +95,7 @@ namespace CapaModeloSeguridadHSC
         //Sebastián Moreira 9959-18-7960
         public (string, int) funBuscar(string id, string nombre, int estado, string ruta)
         {
-            string Query = "select * from `componenteseguridad`.`Aplicacion` where pkId='" + id + "';";
+            string Query = "select * from Aplicacion where pkId='" + id + "';";
 
             OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
             consulta.ExecuteNonQuery();
@@ -311,7 +311,7 @@ namespace CapaModeloSeguridadHSC
             try
             {
                 string cadena = "UPDATE" +
-                " `componenteseguridad`.`Usuario` SET contraseña=" + Contraseña + "WHERE nombre=" + Usuario + "';";
+                " Usuario SET contraseña=" + Contraseña + "WHERE nombre=" + Usuario + "';";
 
                 OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
                 consulta.ExecuteNonQuery();

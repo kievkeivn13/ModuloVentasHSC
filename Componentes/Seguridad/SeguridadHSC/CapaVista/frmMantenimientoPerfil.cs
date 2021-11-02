@@ -11,21 +11,10 @@ namespace CapaVistaSeguridadHSC
     public partial class frmMantenimientoPerfil : Form
     {
         private bloqueos b = new bloqueos();
-        private string idaplicacion = "204";
-        private string pe = "permisoEscritura";
-        private string pel = "permisoEliminar";
-        private string pm = "permisoModificar";
-        private string pl = "permisoLectura";
-        private string pi = "permisoImprimir";
-        private string t1 = "usuarioaplicacion";
-        private string t2 = "aplicacionperfil";
-        private string pk2 = "fkidperfil";
-        private string pk1 = "fkidusuario";
-        private string p1 = "";
-        private string p2 = "";
-        private string p3 = "";
-        private string p4 = "";
-        private string p5 = "";
+        private string idaplicacion = "1";
+        string usuario = "1";
+        string permisos;
+
 
         private Controlador cn = new Controlador();
 
@@ -34,10 +23,7 @@ namespace CapaVistaSeguridadHSC
             InitializeComponent();
             CenterToScreen();
             actualizardatagriew();
-           //obtenerpermisos("2", p1, pe, t2, pk2, idaplicacion);
-           // obtenerpermisos("2", p3, pm, t2, pk2, idaplicacion);
-           // obtenerpermisos("2", p4, pel, t2, pk2, idaplicacion);
-           // obtenerpermisos("2", p5, pi, t2, pk2, idaplicacion);
+            permisos = bloqueo(usuario, idaplicacion);
         }
 
         private string tabla = "perfil";
@@ -193,91 +179,12 @@ namespace CapaVistaSeguridadHSC
             }
         }
         //Luis de la Cruz 0901-18-17144
-        public void obtenerpermisos(string id, string p, string permiso, string t2, string pk, string app)
+        public string bloqueo(string id, string app)
         {
-            b.bloqueo(id, p, permiso, t2, pk, app);
+            string cadena = b.bloqueo(id, app);
 
-            //label1.Text = permiso;
-            //label2.Text = app;
-            //label3.Text = pk;
-            //label4.Text = p;
 
-            if (permiso == pe)
-            {
-                if (p1 == "0")
-                {
-                    btnInsertar.Enabled = false;
-                    //label1.Text = p1;
-                }
-                else
-                {
-                    if (p1 == "1")
-                    {
-                        btnInsertar.Enabled = true;
-                        //label1.Text = p1;
-                    }
-                }
-            }
-            else
-            {
-                if (permiso == pm)
-                {
-                    if (p3 == "0")
-                    {
-                        btnModificar.Enabled = false;
-                        //label2.Text = p3;
-                    }
-                    else
-                    {
-                        if (p3 == "1")
-                        {
-                            btnModificar.Enabled = true;
-                            //label2.Text = p3;
-                        }
-                    }
-                }
-                else
-                {
-                    if (permiso == pel)
-                    {
-                        if (p4 == "0")
-                        {
-                            btnEliminar.Enabled = false;
-                            //label3.Text = p4;
-                        }
-                        else
-                        {
-                            if (p4 == "1")
-                            {
-                                btnEliminar.Enabled = true;
-                                //label3.Text = p4;
-                            }
-                        }
-                    }
-                    /* else
-                     {
-                         if (permiso == pi)
-                         {
-                             if (p5 == "0")
-                             {
-                                 btnImprimir.Enabled = false;
-                             }
-                             else
-                             {
-                                 if (p5 == "1")
-                                 {
-                                     btnImprimir.Enabled = true;
-                                 }
-                             }
-                         }
-                     }*/
-                }
-            }
+            return cadena;
         }
-
-        /*   public void obteneraplicacion(string nombreapp,string idapp)
-           {
-               b.obteneraplicacion(nombreapp,idapp);
-           }*/
     }
 }
