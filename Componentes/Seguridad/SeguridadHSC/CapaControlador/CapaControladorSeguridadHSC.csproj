@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaModelo">
-      <HintPath>..\CapaModelo\bin\Debug\CapaModelo.dll</HintPath>
-    </Reference>
     <Reference Include="CapaModeloSeguridadHSC">
       <HintPath>..\CapaModelo\bin\Debug\CapaModeloSeguridadHSC.dll</HintPath>
     </Reference>

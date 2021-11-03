@@ -11,21 +11,7 @@ namespace CapaControladorSeguridadHSC
         private llamarPermisos ll = new llamarPermisos();
         //Permisos de Botones Luis de la Cruz 0901-18-17144
 
-        public string definirpermisosperfil(string id, string p, string permiso, string t2, string pk, string app)
-        {
-            ll.llenarpermisos(id, p, permiso, t2, pk, app);
-
-
-            MessageBox.Show(" 2da " + p);
-
-            return p;
-
-        }
-        //Luis de la Cruz 0901-18-17144
-        public void obteneraplicacion(string nombreapp, string idapp)
-        {
-            ll.obteneraplicacion(nombreapp, idapp);
-        }
+       
 
         //frmLogin Kevin Flores 9959-18-17632
         public int InicarSesion(string Usuario, string Contraseña, int validar)
@@ -43,7 +29,7 @@ namespace CapaControladorSeguridadHSC
         //Controlador de bloquear usuario. //Kevin Flores 9959-18-17632
         public void funcBloquearUsuario(string Usuario)
         {
-            string Consulta = "UPDATE componenteseguridad.usuario set estado= 0 where nombre= '" + Usuario + "';";
+            string Consulta = "UPDATE usuario set estado= 0 where nombre= '" + Usuario + "';";
             sn.funcModificar(Consulta);
         }
 
@@ -80,7 +66,7 @@ namespace CapaControladorSeguridadHSC
         //Sebastián Moreira 9959-18-7960
         public OdbcDataReader llenarcbxModulo()
         {
-            string sql = "SELECT nombre FROM componenteseguridad.modulo;";
+            string sql = "SELECT nombre FROM modulo;";
             return sn.llenarcbxUsuario(sql);
         }
         //Sebastián Moreira 9959-18-7960

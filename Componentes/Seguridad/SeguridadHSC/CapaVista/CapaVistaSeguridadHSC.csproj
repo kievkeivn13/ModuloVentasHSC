@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="Bitacora, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Bitacora.dll</HintPath>
+      <HintPath>..\..\CodigoBitacora\VistaBitacoraLogin\bin\Debug\Bitacora.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
     <Reference Include="CapaControladorSeguridadHSC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -59,7 +59,7 @@
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
     <Reference Include="VistaBitacoraLogin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\VistaBitacoraLogin.dll</HintPath>
+      <HintPath>..\..\CodigoBitacora\VistaBitacoraLogin\bin\Debug\VistaBitacoraLogin.dll</HintPath>
     </Reference>
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>

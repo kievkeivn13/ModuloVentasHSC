@@ -15,34 +15,12 @@ namespace CapaModeloSeguridadHSC
         Conexion cn = new Conexion();
 
 
-        public string consulta1 = "";
-
-        public void obteneraplicacion(string nombreapp, string idapp)
-        {
-            string Query = "SELECT pkid from aplicacion WHERE nombre='" + nombreapp + "';";
-            OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
-            consulta.ExecuteNonQuery();
-
-            OdbcDataReader busqueda;
-            busqueda = consulta.ExecuteReader();
-
-            if (busqueda.Read())
-            {
-
-                idapp = busqueda["pkid"].ToString();
-
-            }
-
-        }
-
-
-
         //Luis de la Cruz 0901-18-17144
-        public string llenarpermisos(string id, string p, string permiso, string tabla, string pk, string app)
+        public string llenarpermisos(string id, string app)
         {
 
 
-            string Query = "SELECT " + permiso + "  from  " + tabla + " WHERE " + pk + " = " + id + " AND fkIdAplicacion= " + app + ";";
+            string Query = "SELECT  *    from   usuarioAplicacion   WHERE fkIdUsuario = " + id + " AND fkIdAplicacion= " + app + ";";
 
 
 
@@ -55,51 +33,33 @@ namespace CapaModeloSeguridadHSC
             OdbcDataReader busqueda;
             busqueda = consulta.ExecuteReader();
 
-
+            string cadena = "";
             if (busqueda.Read())
             {
 
-                if (permiso == "permisoEscritura")
-                {
-                    p = busqueda["permisoEscritura"].ToString();
-                }
-                else
-                {
-                    if (permiso == "permisoLectura")
-                    {
-                        p = busqueda["permisoLectura"].ToString();
-                    }
-                    else
-                    {
-                        if (permiso == "permisoImprimir")
-                        {
-                            p = busqueda["permisoImprimir"].ToString();
-                        }
 
-                        else
-                        {
-                            if (permiso == "permisoEliminar")
-                            {
-                                p = busqueda["permisoEliminar"].ToString();
-                            }
-                            else
-                            {
-                                if (permiso == "permisoModificar")
-                                {
-                                    p = busqueda["permisoModificar"].ToString();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error ");
-                                }
-                            }
-                        }
-                    }
-                }
+                string escritura = busqueda["permisoEscritura"].ToString();
+
+               string lectura = busqueda["permisoLectura"].ToString();
+
+
+               string imprimir = busqueda["permisoImprimir"].ToString();
+
+
+               string eliminar = busqueda["permisoEliminar"].ToString();
+
+
+               string modificar = busqueda["permisoModificar"].ToString();
+
+                 cadena = escritura + lectura + imprimir + eliminar + modificar;
+
 
             }
-            MessageBox.Show("QUERY:" + Query + " Resultado " + p);
-            return p;
+
+            
+
+            return cadena;
+
 
         }
 

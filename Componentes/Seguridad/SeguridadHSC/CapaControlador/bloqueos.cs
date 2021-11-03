@@ -4,28 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
+using CapaModeloSeguridadHSC;
 
 //0901-18-17144 Luis De la Cruz
 namespace CapaControladorSeguridadHSC
 {
     public class bloqueos
     {
-        private Controlador cn = new Controlador();
+        llamarPermisos llp = new llamarPermisos();
 
-        public string bloqueo(string id, string p, string permiso, string t2, string pk, string app)
+        public string bloqueo(string id, string app)
         {
-            cn.definirpermisosperfil(id, p, permiso, t2, pk, app);
+            string cadena = llp.llenarpermisos(id, app);
 
-            return p;
+            return cadena;
 
         }
 
 
-
-        public void obteneraplicacion(string nombreapp, string idapp)
-        {
-            cn.obteneraplicacion(nombreapp, idapp);
-        }
 
 
     }
