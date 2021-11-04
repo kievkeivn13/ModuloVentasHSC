@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BitacoraUsuario;
 using CapaControlador;
 using CapaVista;
 
@@ -279,6 +280,11 @@ namespace DLL.nav
             desactivarBotones(0);
             manipularTextboxs(0);
             llenaTabla();//recarga los datos de la tabla
+
+            /* Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora guardar = new Bitacora();
+            guardar.guardarEnBitacora(idAplicacion, "1", "0012", "guardar");
+            
         }
 
         /*Josue Daniel Zapata Azañon - 9959-18-4829*/
@@ -324,6 +330,9 @@ namespace DLL.nav
             estado = 1;
             desactivarBotones(1);
             manipularTextboxs(1);
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/ 
+            Bitacora insertar = new Bitacora();
+            insertar.guardarEnBitacora(idAplicacion, "1", "0012", "insertar");
         }
 
         //Lo hizo Wilber Enrique Segura Ramirez 0901-18-13952
@@ -356,7 +365,10 @@ namespace DLL.nav
             {
                 MessageBox.Show("No existe ninguna datagridview");
                 return;
-            }          
+            }
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora modificar = new Bitacora();
+            modificar.guardarEnBitacora(idAplicacion, "1", "0012", "modificar");
         }
 
         /*Brayan Mauricio Cifuentes López - 9959-18-11113*/
@@ -368,6 +380,12 @@ namespace DLL.nav
             desactivarBotones(0);
             manipularTextboxs(0);
             llenaTabla();
+
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora eliminar = new Bitacora();
+            eliminar.guardarEnBitacora(idAplicacion, "1", "0012", "eliminar");
+
+
         }
 
 
@@ -438,6 +456,9 @@ namespace DLL.nav
                 }
             }
             cargaData();
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora botonSiguiente = new Bitacora();
+            botonSiguiente.guardarEnBitacora(idAplicacion, "1", "0012", "Boton Siguiente");
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)//Kevin Rolando González Ramírez 0901-18-1387
@@ -488,6 +509,9 @@ namespace DLL.nav
                 */
             }
             cargaData();
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora botonAnterior = new Bitacora();
+            botonAnterior.guardarEnBitacora(idAplicacion, "1", "0012", "Boton Anterior");
         }
 
         private void btnInicio_Click(object sender, EventArgs e)//Kevin Rolando González Ramírez 0901-18-1387
@@ -514,6 +538,10 @@ namespace DLL.nav
 
             }
             cargaData();
+
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora inicio = new Bitacora();
+            inicio.guardarEnBitacora(idAplicacion, "1", "0012", "inicio");
         }
 
         private void btnFinal_Click(object sender, EventArgs e)//Kevin Rolando González Ramírez 0901-18-1387
@@ -539,13 +567,18 @@ namespace DLL.nav
 
             }
             cargaData();
+
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora final = new Bitacora();
+            final.guardarEnBitacora(idAplicacion, "1", "0012", "Final");
         }
 
         private void navegador_Load(object sender, EventArgs e)
         {
 
         }
-
+         
+        /* Daniel Enrique Navas Hernandez 0901-18-15032 */ 
         private void btnActualizar_Click(object sender, EventArgs e)//Daniel Navas
         {
             llenaTabla();
@@ -559,12 +592,19 @@ namespace DLL.nav
 
             actualizarCombo();
 
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora actualizar = new Bitacora();
+            actualizar.guardarEnBitacora(idAplicacion, "1", "0012", "actualizar");
         }
 
         /*Jorge Lizandro Castañeda Choy - 9959-18-4964*/
         private void btnSalir_Click(object sender, EventArgs e)
         {
             generic.Close();
+
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora salir = new Bitacora();
+            salir.guardarEnBitacora(idAplicacion, "1", "0012", "Salir");
         }
         Form generic;
 
@@ -572,6 +612,9 @@ namespace DLL.nav
         {
             generic = generico;
         }
+
+
+
 
         /*Geovani Fernando Mendoza - 9959-18-15407*/
         private void btnAyuda_Click(object sender, EventArgs e)
@@ -581,6 +624,9 @@ namespace DLL.nav
 
             //Help.ShowHelp(this, "Ayudas/AyudasSistemaReparto.chm", "ManualSistemaReparto.html");
 
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora ayuda = new Bitacora();
+            ayuda.guardarEnBitacora(idAplicacion, "1", "0012", "Ayuda");
         }
 
         private void manipularTextboxs(int modo)//Josue Zapata 9959-18-4829 y Jaime López 0901-18-735
@@ -735,12 +781,19 @@ namespace DLL.nav
             {
                 funMostrarFormR();
             }
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora reporteador = new Bitacora();
+            reporteador.guardarEnBitacora(idAplicacion, "1", "0012", "reporteador");
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             ConsultasInteligentes CI = new ConsultasInteligentes();
             CI.Show();
+
+            /*Daniel Enrique Navas Hernandez 0901-18-15032*/
+            Bitacora consultar = new Bitacora();
+            consultar.guardarEnBitacora(idAplicacion, "1", "0012", "consultar");
         }
     }
 }
