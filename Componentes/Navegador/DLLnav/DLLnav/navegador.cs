@@ -38,15 +38,141 @@ namespace DLL.nav
         ArrayList referencia3 = new ArrayList();
         ArrayList referencia4 = new ArrayList();
 
+        //Liam Patrick Bernard García 0901-18-10092
+        public Boolean permisoIngreso = true;  //Valor que debe llegar de seguridad
+        public Boolean permisoModificar = true;  //Valor que debe llegar de seguridad
+        public Boolean permisoEliminar = true;  //Valor que debe llegar de seguridad
+        public Boolean permisoConsultar = true;  //Valor que debe llegar de seguridad
+        public Boolean permisoReporteador = true;  //Valor que debe llegar de seguridad
+
+        public string permisos;
+        public string usuario = "";
+        public string aplicacion = "";
+        public string idusuario;
+
         //Fin varaibles globales
 
 
         public navegador()
         {
             InitializeComponent();
+        }
+
+        public void funActualizarPermisos() //Liam Patrick Bernard García 0901-18-10092, Jaime López 0901-18-735
+        {
+            CapaControladorSeguridadHSC.Controlador controladorSeguridad = new CapaControladorSeguridadHSC.Controlador();
+            idusuario = controladorSeguridad.consultausuario(usuario);
+            idAplicacion = controladorSeguridad.consultaaplicacion(aplicacion);
+
+            //MessageBox.Show("La aplicacion es: " + idAplicacion + aplicacion);
+            //MessageBox.Show("El Usuario es: " + idusuario + usuario);
+            //permisos = "11011"; //Escritura, Lectura, Imprimir, Eliminar, Modificar
+
+            permisos = control.funObtienePermisos(idusuario, idAplicacion);
+            //MessageBox.Show("El Usuario y Aplicacion es: " + idusuario + idAplicacion + " " + permisos);
+
+            if(permisos.Length < 5)
+            {
+                MessageBox.Show("El Usuario no tiene permisos para esta aplicacion.");
+                generic.Close();
+                return;
+            }
+
+            if (permisos[0] == '1')
+            {
+                permisoIngreso = true;
+            }
+            else
+            {
+                permisoIngreso = false;
+            }
+
+            if (permisos[1] == '1')
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Usted No Tiene Permisos de Lectura");
+                generic.Close();
+            }
+
+            if (permisos[2] == '1')
+            {
+                permisoReporteador = true;
+            }
+            else
+            {
+                permisoReporteador = false;
+            }
+
+            if (permisos[3] == '1')
+            {
+                permisoEliminar = true;
+            }
+            else
+            {
+                permisoEliminar = false;
+            }
+
+            if (permisos[4] == '1')
+            {
+                permisoModificar = true;
+            }
+            else
+            {
+                permisoModificar = false;
+            }
+
             btnGuardar.Enabled = false;
             btnCancelar.Enabled = false;
 
+            //Habilitación de Permisos, Liam Patrick Bernard García, 0901-18-10092
+
+            if (permisoIngreso == false)
+            {
+                btnIngresar.Enabled = false;
+            }
+            else
+            {
+                btnIngresar.Enabled = true;
+            }
+
+            if (permisoModificar == false)
+            {
+                btnModificar.Enabled = false;
+            }
+            else
+            {
+                btnModificar.Enabled = true;
+            }
+
+            if (permisoEliminar == false)
+            {
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEliminar.Enabled = true;
+            }
+
+            if (permisoConsultar == false)
+            {
+                btnConsultar.Enabled = false;
+            }
+            else
+            {
+                btnConsultar.Enabled = true;
+            }
+
+            if (permisoReporteador == false)
+            {
+                btnReporte.Enabled = false;
+            }
+            else
+            {
+                btnReporte.Enabled = true;
+            }
         }
 
         /*private void pnlBgIngresar_MouseClick(object sender, MouseEventArgs e)
@@ -188,11 +314,52 @@ namespace DLL.nav
             if (tipo == 0)
             {
                 //activa
-                btnIngresar.Enabled = true;
-                btnModificar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnConsultar.Enabled = true;
-                btnReporte.Enabled = true;
+                //Función de Validar Permisos, Liam Patrick Bernard Garcia, 0901-18-10092
+                if (permisoIngreso == false)
+                {
+                    btnIngresar.Enabled = false;
+                }
+                else
+                {
+                    btnIngresar.Enabled = true;
+                }
+
+                if (permisoModificar == false)
+                {
+                    btnModificar.Enabled = false;
+                }
+                else
+                {
+                    btnModificar.Enabled = true;
+                }
+
+                if (permisoEliminar == false)
+                {
+                    btnEliminar.Enabled = false;
+                }
+                else
+                {
+                    btnEliminar.Enabled = true;
+                }
+
+                if (permisoConsultar == false)
+                {
+                    btnConsultar.Enabled = false;
+                }
+                else
+                {
+                    btnConsultar.Enabled = true;
+                }
+
+                if (permisoReporteador == false)
+                {
+                    btnReporte.Enabled = false;
+                }
+                else
+                {
+                    btnReporte.Enabled = true;
+                }
+
                 btnActualizar.Enabled = true;
                 //desactiva
                 btnGuardar.Enabled = false;

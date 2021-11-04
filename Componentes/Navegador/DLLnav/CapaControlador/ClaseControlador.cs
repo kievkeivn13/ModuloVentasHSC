@@ -162,6 +162,12 @@ namespace CapaControlador
 
         }
 
+        /*Liam Patrick Bernard García - 0901-18-10092*/
+        public string funObtienePermisos(string idUsuario, string idAplicacion)
+        {
+            CapaModeloSeguridadHSC.llamarPermisos modeloSeguridad = new CapaModeloSeguridadHSC.llamarPermisos();
+            return modeloSeguridad.llenarpermisos(idUsuario, idAplicacion);
+        }
 
     }
 
