@@ -1,17 +1,18 @@
-﻿using ControladorReporteador;
-using System;
+﻿using System;
+using CapaControlador;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
+using CrystalDecisions.CrystalReports.Engine;
 using System.Text;
+using System.Windows.Forms.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
-using System.Windows.Forms.ComponentModel;
-namespace VistaReporteador
+
+namespace CapaVista
 {
     public partial class ReporteadorUsuario : Form
     {
@@ -19,11 +20,10 @@ namespace VistaReporteador
         public ReporteadorUsuario()
         {
             InitializeComponent();
-            actualizardatagriew();   //Aqui inciciamos la funcion actulizardatagriew() para que salgan los datos de la BD en el datagriew
-
+            actualizardatagriew();
         }
-        ControladorQ sn = new ControladorQ(); // Aqui creamos un nuevo objero de ControladorQ con el nombre sh
-        String tabla = "reportes"; // Aqui le asignamos a la variable tabla reportes que es el nombre de nuestra tabla
+        Controlador sn = new Controlador();
+        String tabla = "reporte"; // Aqui le asignamos a la variable tabla reportes que es el nombre de nuestra tabla
         //Luis Reyes 0901-15-3121
         public void actualizardatagriew() // Creamos una nueva funcion para llenar el datagriew con los datos de la BD reportes
         {
@@ -41,7 +41,6 @@ namespace VistaReporteador
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             busqueda();
-
         }
         //Luis Reyes 0901-15-3121
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -52,23 +51,25 @@ namespace VistaReporteador
         //Luis Reyes 0901-15-3121
         private void btnAbrir_Click(object sender, EventArgs e)
         {
-            int est;
-            est = int.Parse(txtEstado.Text);
-            if (est == 1)
+            string est;
+            est = Convert.ToString(txtEstado.Text);
+            if (est == "A")
             {
                 string r = txtRuta.Text;  // creamos una variable string r que seria = al dato que esta TxtReporte que es la ruta del reporte
-                frmReporteAdm b = new frmReporteAdm(r); // Aqui creamos un nuevo objeto de Boton que le mandamos el dato que esta en la variable r
+                frmReporteEmp b = new frmReporteEmp(r);// Aqui creamos un nuevo objeto de Boton que le mandamos el dato que esta en la variable r
                 b.Show(); // ahora llamamos al formulario para mostrar el reporte
             }
             else
             {
                 MessageBox.Show("Reporte Desabilitado");
             }
+
         }
-        //Luis Reyes 0901-15-3121
+
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             actualizardatagriew();
         }
     }
 }
+

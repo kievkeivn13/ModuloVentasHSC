@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F90D3FD-E2F2-489B-B126-34758C4F4FF4}</ProjectGuid>
+    <ProjectGuid>{D4A62045-9D19-40EE-B279-D889CAC4D53B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>llamada</RootNamespace>
     <AssemblyName>llamada</AssemblyName>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapaVista">
+      <HintPath>..\..\Reporteador\CapaVista\bin\Debug\CapaVista.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,9 +47,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="VistaReporteador">
-      <HintPath>..\..\ObjetoReporteador\VistaReporteador\bin\Debug\VistaReporteador.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

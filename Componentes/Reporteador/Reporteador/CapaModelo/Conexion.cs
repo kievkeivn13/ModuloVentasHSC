@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Odbc;
 using System.Linq;
 using System.Text;
+using System.Data.Odbc;
 using System.Threading.Tasks;
 
-namespace ModeloReporteador
+namespace CapaModelo
 {
-    // Luis Reyes 0901-15-3121
-    public class clsConexion
+    //Luis Reyes 0901-15-3121
+    public class Conexion
     {
         public OdbcConnection conexion()
         {

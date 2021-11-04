@@ -6,39 +6,32 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
+using System.Windows.Forms;
 
-namespace VistaReporteador
+namespace CapaVista
 {
+    //Luis Reyes 0901-15-3121
     public partial class frmReporteEmp : Form
     {
         public frmReporteEmp()
         {
             InitializeComponent();
         }
-
-        public frmReporteEmp(string t)
+        //Luis Reyes 0901-15-3121
+        public frmReporteEmp(String texto)
         {
             InitializeComponent();
-            txtRuta.Text = t;
+            textBox1.Text = texto;
             mostrar();
         }
-
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
+        //Luis Reyes 0901-15-3121
         public void mostrar()
         {
-
             ReportDocument crystalrpt = new ReportDocument();
-            crystalrpt.Load(txtRuta.Text);
+            crystalrpt.Load(textBox1.Text);
             crystalReportViewer1.ReportSource = crystalrpt;
             crystalReportViewer1.Refresh();
-
         }
-
     }
 }
