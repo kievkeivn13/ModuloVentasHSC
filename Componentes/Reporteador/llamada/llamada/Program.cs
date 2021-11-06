@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CapaVista;
+using CapaVistaReporte;
 using System.Windows.Forms;
 
-namespace llamada
+namespace Llamada
 {
     static class Program
     {
@@ -17,8 +17,7 @@ namespace llamada
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReporteadorAdmin());
-
+            Application.Run(new CapaVistaReporte.ReporteadorAdmin());
         }
     }
 }

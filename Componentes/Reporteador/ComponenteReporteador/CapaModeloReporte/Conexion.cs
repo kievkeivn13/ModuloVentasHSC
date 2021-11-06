@@ -5,11 +5,11 @@ using System.Text;
 using System.Data.Odbc;
 using System.Threading.Tasks;
 
-namespace CapaModelo
+namespace CapaModeloReporte
 {
-    //Luis Reyes 0901-15-3121
     public class Conexion
     {
+        //Luis Reyes 0901-15-3121
         public OdbcConnection conexion()
         {
             //creacion de la conexion via ODBC
@@ -25,6 +25,7 @@ namespace CapaModelo
             return conn;
         }
 
+        //Luis Reyes 0901-15-3121
         //metodo para cerrar la conexion
         public void desconexion(OdbcConnection conn)
         {

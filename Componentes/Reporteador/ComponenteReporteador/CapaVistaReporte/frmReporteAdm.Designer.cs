@@ -1,5 +1,5 @@
 ﻿
-namespace CapaVista
+namespace CapaVistaReporte
 {
     partial class frmReporteAdm
     {
@@ -50,11 +50,11 @@ namespace CapaVista
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(475, 9);
+            this.label1.Location = new System.Drawing.Point(480, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 25);
-            this.label1.TabIndex = 25;
+            this.label1.TabIndex = 26;
             this.label1.Text = "Reportes";
             // 
             // textBox1
@@ -62,10 +62,10 @@ namespace CapaVista
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(53, 291);
+            this.textBox1.Location = new System.Drawing.Point(53, 271);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 13);
-            this.textBox1.TabIndex = 26;
+            this.textBox1.TabIndex = 27;
             // 
             // frmReporteAdm
             // 
