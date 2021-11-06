@@ -34,6 +34,9 @@
     <Reference Include="CapaControladorNav">
       <HintPath>..\CapaControlador\bin\Debug\CapaControladorNav.dll</HintPath>
     </Reference>
+    <Reference Include="CapaControladorSeguridadHSC">
+      <HintPath>..\..\..\Seguridad\SeguridadHSC\CapaControlador\bin\Debug\CapaControladorSeguridadHSC.dll</HintPath>
+    </Reference>
     <Reference Include="CapaVista">
       <HintPath>..\..\..\ConsultasInteligentes\ConsultasInteligentes\consultasinteligentes\CapaVista\bin\Debug\CapaVista.dll</HintPath>
     </Reference>
