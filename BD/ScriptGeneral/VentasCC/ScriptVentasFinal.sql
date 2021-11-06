@@ -76,16 +76,16 @@ create table cotizacionEncabezado(
 	foreign key (Fkidcliente) references Cliente (Pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-/*
+
 create table cotizacionDetalle(
 	Pkid varchar(15) primary key,
 	Fkencabezado varchar(15) not null,
 	Fkidproducto varchar(15),
 
-	foreign key (Fkencabezado) references Cliente (Pkid),
-	foreign key (Fkidproducto) references Producto (pkid)
+	foreign key (Fkencabezado) references cotizacionEncabezado (Pkid),
+	foreign key (Fkidproducto) references producto (pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
-*/
+
 
 create table facturacionEncabezado(
 	Pkid varchar(15) primary key,
@@ -102,7 +102,7 @@ create table facturacionEncabezado(
 	foreign key (Fkidcotizacion) references CotizacionEncabezado (Pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-/*
+
 create table facturacionDetalle(
 	Pkid varchar(15) primary key,
 	Fkencabezado varchar(15) not null,
@@ -111,11 +111,11 @@ create table facturacionDetalle(
 	subtotal float not null,
 	iva float not null,
 	
-	foreign key (Fkencabezado) references Cliente (Pkid),
+	foreign key (Fkencabezado) references facturacionEncabezado (Pkid),
 	foreign key (Fkidproducto) references Producto (Pkid)
 
 )engine=InnoDB DEFAULT CHARSET=latin1;
-*/
+
 
 create table comision(
 	Pkid varchar(15) primary key,
@@ -157,7 +157,7 @@ create table pedidoEncabezado(
 	foreign key (fkidCliente) references Cliente(pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
 
-/*
+
 create table pedidoDetalle(
 	pkid varchar(15) primary key,
 	fkidpedido varchar(15) not null,
@@ -166,7 +166,7 @@ create table pedidoDetalle(
 	foreign key (fkidpedido) references PedidoEncabezado(pkid),
 	foreign key (fkidproducto) references Producto(pkid)
 )engine=InnoDB DEFAULT CHARSET=latin1;
-*/
+
 create table movimientoMotivo(
 	Pkid varchar(15) primary key,
 	Movimiento varchar(15),    
