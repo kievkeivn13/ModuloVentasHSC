@@ -1,17 +1,36 @@
 -- ------------------------------
 # LMD DATABASE hotelSanCarlos
 -- ------------------------------
-
 USE hotelSanCarlos;
 
 -- ---------------------------------------------------
--- INSERT COMPONENTE SEGURIDAD
+-- COMPONENTE SEGURIDAD
 -- ---------------------------------------------------
+-- alter de campo estado en empleado y no aceptar nulos
+ALTER TABLE hotelsancarlos.empleado
+ADD COLUMN estado VARCHAR(1) NOT NULL AFTER fkIdEmpresa,
+CHANGE COLUMN nombre nombre VARCHAR(45) NOT NULL ,
+CHANGE COLUMN apellido apellido VARCHAR(45) NOT NULL ,
+CHANGE COLUMN fechaDeNacimiento fechaDeNacimiento VARCHAR(45) NOT NULL ,
+CHANGE COLUMN sueldo sueldo FLOAT NOT NULL ,
+CHANGE COLUMN correo correo VARCHAR(45) NOT NULL ,
+CHANGE COLUMN direccion direccion VARCHAR(45) NOT NULL ,
+CHANGE COLUMN contratado contratado VARCHAR(45) NOT NULL ,
+CHANGE COLUMN añosDeExperiencia añosDeExperiencia INT NOT NULL ,
+CHANGE COLUMN telefono telefono VARCHAR(10) NOT NULL ,
+CHANGE COLUMN fechaContratacion fechaContratacion DATE NOT NULL ,
+CHANGE COLUMN finDeContrato finDeContrato DATE NOT NULL ;
+
+-- Insert con relacion al empleado
+insert into puesto values("1","Gerente", "10", "1");
+insert into empresa values("1", "65464-k","hotel san carlos","zona 6 de mixco", "65467654","1" );
+insert into empleado values("1","María","Hernandez","1999-09-25","4000.00","cmaria@gmail.com", "zona 11","4", "5", "789654123", "2016-10-25", "2021-12-25","1","1","0");
+
 #usuario: admin
 #contraseña: 12345
-insert into empleado values("1","María","Hernandez");
 INSERT INTO usuario(pkId,fkIdEmpleado, nombre, contraseña,estado,intento) VALUES ("1", "1", "admin","LKAekHU9EtweB49HAaTRfg==","1","0");
 
+-- Inserts con relacion a seguridad
 insert into perfil values("1","Administrador","1");
 insert into perfil values("2","Vendedor","1");
 
@@ -30,31 +49,6 @@ INSERT INTO aplicacion VALUES ("0010","1","Cambiar Contraseña",1,0010,0);
 INSERT INTO aplicacion VALUES ("0011","1","Consulta Bitácora",1,0011,0);
 INSERT INTO aplicacion VALUES ("0012","1","Mantenimiento Módulo",1,0012,0);
 
-    
--- -----------------------------------------
--- INSERT COMPONENTE CONSULTAS INTELIGENTES
--- -----------------------------------------
-INSERT INTO `registro_consultas` (`id_registro`, `nombre`, `consulta`) VALUES
-(3, 'consulta1', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\" OR id_linea=\"3\"  order by id_linea desc;'),
-(4, 'consulta2', 'SELECT id_factura_header as fh FROM factura_header ;'),
-(5, 'aniversario', 'SELECT nombre as nonono FROM proveedores ;'),
-(8, 'todosprov', 'SELECT  * FROM proveedores ;'),
-(10, 'nuevoprov', 'SELECT  * FROM proveedores '),
-(11, 'Demostracion', 'SELECT  * FROM linea    ;'),
-(12, 'Todos los campos', 'SELECT  * FROM proveedores '),
-(13, 'simple', 'SELECT nombre FROM marca '),
-(14, 'pruebasimple', 'SELECT nombre FROM linea     ;'),
-(18, 'ejemplox', 'SELECT  * FROM linea  WHERE id_linea=\"1\"    ;'),
-(19, 'pruebabiggs', 'SELECT  * FROM linea  WHERE id_linea=\"1\"    ;'),
-(20, 'and', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  AND nombre=\"1\"   ;'),
-(21, 'orord', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea desc ;'),
-(22, 'error', 'SELECT  * FROM linea  WHERE nombre=\"1\"  AND id_linea=\"1\"  group by id_linea ;'),
-(28, 'prueba', 'SELECT  * FROM registro_consultas  WHERE id_registro=\"1\"    ;'),
-(29, 'Pruebadef', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea desc ;'),
-(30, 'pruebadef2', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\" OR id_linea=\"3\"  order by id_linea desc ;'),
-(31, 'pruebadef3', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea asc ;'),
-(36, 'esteban', 'SELECT id_linea as linea , nombre as esteban FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  order by id_linea asc;'),
-(37, 'ejemplo36', 'SELECT  * FROM linea    ;'),
-(38, 'pruebafinal', 'SELECT  * FROM linea  WHERE id_linea=\"1\"  OR id_linea=\"2\"  group by id_linea;');
-
-ALTER TABLE `registro_consultas` MODIFY `id_registro` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+/*Alter con ajuste de tamaño para el campo de ip en bitácora*/ 
+ALTER TABLE hotelsancarlos.bitacorausuario 
+CHANGE COLUMN ip ip VARCHAR(100) NULL DEFAULT NULL ;
