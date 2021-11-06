@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CapaVista;
 using System.Windows.Forms;
-using VistaReporteador;
 
 namespace llamada
 {
@@ -17,7 +17,8 @@ namespace llamada
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reporteador());
+            Application.Run(new ReporteadorAdmin());
+
         }
     }
 }

@@ -1,33 +1,28 @@
-﻿using ModeloReporteador;
-using System;
+﻿using System;
+using CapaModelo;
 using System.Collections.Generic;
+using System.Linq;
 using System.Data;
 using System.Data.Odbc;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
-namespace ControladorReporteador
+namespace CapaControlador
 {
-    public class ControladorQ
+    public class Controlador
     {
         //Carol Monterroso 0901-17-5961
         //funcion para actualizar el datagrid
-        Consultas con = new Consultas();
+
+        Sentencias con = new Sentencias();
         public void Actualizar(string nombre, string ruta, string IdAplicacion, string estado, string id)
         {
             string exc = @"\\";
             string orgn = @"\";
             ruta = ruta.Replace(orgn, exc);
-            
-            string cadena = "UPDATE reportes SET " +
-                "Nombre = '" + nombre +"', " +
-                "Ruta = '" + ruta +"', " +
-                "IdAplicacion = '" + IdAplicacion +"', " +
-                "Estado = '" + estado + "' " +
-                "WHERE (IdReporte = '" + id +"');";
-                con.Guardar(cadena);
+
+            con.Guardar(nombre, ruta, IdAplicacion, estado, id);
         }
 
         //Angel Chacón 9959-18-5201 
@@ -38,43 +33,27 @@ namespace ControladorReporteador
             string orgn = @"\";
             ruta = ruta.Replace(orgn, exc);
 
-            string cadena = "INSERT INTO Reportes VALUES('" + id + "','" + nombre + "','" + ruta + "','" + IdAplicacion + "','" + estado + "');";
-                con.Guardar(cadena);
+            con.Guardar2(id, nombre, ruta, IdAplicacion, estado);
         }
 
-        //Angel Chacón 9959-18-5201 
-        //Funcion para obtener el IdModulo para el combobox
-        public OdbcDataReader IdModulo(string nombreM)
-        {        
-            string cadena = "Select IdModulo from modulos where Nombre = '" + nombreM + "';";
-            return con.IdMod(cadena);          
-        }
-
-        //Angel Chacón 9959-18-5201 
-        //Funcion para obtener el nombre del modulo en combobox
-        public OdbcDataReader llenarcbxModulo()
-        {
-            string sql = "SELECT Nombre FROM provisional.modulos;";
-            return con.llenarcbxmodulo(sql);
-        }
 
         //Angel Chacón 9959-18-5201 
         //Funcion para obtener el IdAplic
         public OdbcDataReader IdAplici(string nombreA)
         {
-            string cadena = "Select IdAplicacion from aplicacion where Nombre = '" + nombreA + "';";
-            return con.IdAplic(cadena);
+
+            return con.IdAplic(nombreA);
         }
 
         //Angel Chacón 9959-18-5201 
         //Funcion para obtener el nombre de la aplicacion en combobox
         public OdbcDataReader llenarcbxAplic()
         {
-            string sql = "SELECT Nombre FROM provisional.aplicacion;";
-            return con.llenarcbxAplicacion(sql);
+
+            return con.llenarcbxAplicacion();
         }
 
-        Consultas cons = new Consultas();
+        Sentencias cons = new Sentencias();
         //Francisco 0901-17-16694 
         public DataTable llenarTbl(string tabla)//Llena el datagrid con los datos obtenidos en la funcion de consultas 
         {
@@ -95,8 +74,8 @@ namespace ControladorReporteador
         //Carol Monterroso 0901-17-5961
         public void data(string tabla)
         {
-            string cadena = @"SELECT * FROM provisional.reportes;";            
-            con.dataGrid(tabla, cadena);            
+            string datos = tabla;
+            con.dataGrid(datos);
         }
 
     }
