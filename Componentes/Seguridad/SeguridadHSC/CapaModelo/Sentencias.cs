@@ -67,7 +67,7 @@ namespace CapaModeloSeguridadHSC
         }
 
         //frmMantenimientoAplicacion Sebastián Moreira 9959-18-7960 
-        public void funInsertar(string Id, string Nombre, string Modulo, int estado, string rutaChm, string rutaHtml)
+        public void funInsertar(string Id, string Modulo, string Nombre, int estado, string rutaChm, string rutaHtml)
         {
             //INSERT INTO `componenteseguridad`.`aplicacion` (`pkId`, `fkIdModulo`, `nombre`, `estado`, `rutaChm`, `rutaHtml`) VALUES('1001', '2', 'Conta', '1', '0', '0');
             string cadena = "INSERT INTO aplicacion VALUES ('" + Id + "', '" + Modulo + "' , '" + Nombre + "' , '" + estado + "', '" + rutaChm + "', '" + rutaHtml + "');";

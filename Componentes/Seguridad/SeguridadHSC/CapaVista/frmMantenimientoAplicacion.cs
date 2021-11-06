@@ -56,7 +56,8 @@ namespace CapaVistaSeguridadHSC
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+            textBox4.Text = textBox4.Text.Replace("\\", "\\\\");
+            textBox5.Text = textBox5.Text.Replace("\\", "\\\\");
         }
         //Sebastián Moreira 9959-18-7960
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -85,10 +86,13 @@ namespace CapaVistaSeguridadHSC
         {
             try
             {
+                textBox4.Text = textBox4.Text.Replace("\\", "\\\\");
+                textBox5.Text = textBox5.Text.Replace("\\", "\\\\");
                 //Jorge González 0901-18-3920
                 loggear.guardarEnBitacora(IdUsuario, "1", "0003", "Modificación Exitosa");
                 //
                 conAplicacion.modificarAplicacion(textBox1.Text, textBox6.Text, textBox2.Text, int.Parse(textBox3.Text), textBox4.Text, textBox5.Text);
+                Console.WriteLine(textBox1.Text + "    " + textBox6.Text + textBox2.Text + int.Parse(textBox3.Text) + textBox4.Text + textBox5.Text + "");
                 MessageBox.Show("Modificacion realizada");
                 funLimpiar();
                 actualizardatagriew();
@@ -151,7 +155,7 @@ namespace CapaVistaSeguridadHSC
             {
                 if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(fd.SelectedPath))
                 {
-                    textBox4.Text = fd.SelectedPath;
+                    textBox4.Text = fd.SelectedPath.Replace("\\","\\\\");
                 }
             }
         }
@@ -167,7 +171,7 @@ namespace CapaVistaSeguridadHSC
             {
                 if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(fd.SelectedPath))
                 {
-                    textBox5.Text = fd.SelectedPath;
+                    textBox5.Text = fd.SelectedPath.Replace("\\", "\\\\");
                 }
             }
         }
@@ -203,12 +207,13 @@ namespace CapaVistaSeguridadHSC
         //Sebastián Moreira 9959-18-7960
         private void dataGridView1_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
+           
             textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textBox6.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString().Replace("\\", "\\\\");
+            textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString().Replace("\\", "\\\\");
 
             if (textBox3.Text == "1")
             {
