@@ -49,9 +49,9 @@ namespace Navegador
 
             // Actualizacion de Permisos, Liam Patrick Bernard García - 0901-18-10092
             navegador1.usuario = "admin";
-            navegador1.aplicacion = "Prueba";
+            navegador1.aplicacion = "Mantenimiento Módulo";
             navegador1.funActualizarPermisos();
-
+            navegador1.idmodulo = "1";
             //cbxCodMarca
 
         }
