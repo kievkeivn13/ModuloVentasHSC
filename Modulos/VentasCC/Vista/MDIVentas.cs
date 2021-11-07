@@ -89,5 +89,29 @@ namespace CapaVistaMVentasCC
             else
             { this.Close(); }
         }
-    }
+
+		private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+            //Heydi Quemé 9959-18-5335
+            frmPedido form3 = new frmPedido();
+            form3.MdiParent = this;
+            form3.Show();
+        }
+
+		private void cotizaciónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+            //Heydi Quemé 9959-18-5335
+            frmCotizacion form3 = new frmCotizacion();
+            form3.MdiParent = this;
+            form3.Show();
+        }
+
+		private void facturaciónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+            //Heydi Quemé 9959-18-5335
+            frmFacturacion form3 = new frmFacturacion();
+            form3.MdiParent = this;
+            form3.Show();
+        }
+	}
 }
