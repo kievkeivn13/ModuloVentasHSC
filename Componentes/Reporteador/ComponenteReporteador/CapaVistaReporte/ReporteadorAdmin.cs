@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using CapaControlador;
+using CapaControladorReporte;
 using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
@@ -12,7 +12,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using System.Windows.Forms.ComponentModel;
 using System.Windows.Forms;
 
-namespace CapaVista
+namespace CapaVistaReporte
 {
     public partial class ReporteadorAdmin : Form
     {
@@ -26,7 +26,6 @@ namespace CapaVista
             llenarcbxAplicacion();
         }
         Controlador sn = new Controlador();
-
         String tabla = "reporte";
         //Francisco 0901-17-16694
         public void actualizardatagriew()//Funcion de actualizar 
@@ -103,7 +102,7 @@ namespace CapaVista
         }
         //Angel Chacón 9959-18-5201 
         //llamada a la funcion para modificar datos en la tabla de roportes
-        private void button1_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             Controlador cq = new Controlador();
             cq.Actualizar(textBoxNombre.Text, textBoxRuta.Text, cbxIdAplic.Text, txtEstado.Text, textBoxID.Text);
@@ -111,9 +110,8 @@ namespace CapaVista
             desactivarTextBox();
             dataGrid();
         }
-
         //Carol Monterroso 0901-17-5961
-        private void button2_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             Controlador cq = new Controlador();
             cq.Actualizar(textBoxNombre.Text, textBoxRuta.Text, cbxIdAplic.Text, txtEstado.Text, textBoxID.Text);
@@ -121,14 +119,13 @@ namespace CapaVista
             desactivarTextBox();
             dataGrid();
         }
-
         //Carol Monterroso 0901-17-5961
-        private void button3_Click(object sender, EventArgs e)
+        private void btnHabilitar_Click(object sender, EventArgs e)
         {
             activarTextBox();
         }
         //Luis Reyes 0901-15-3121
-        private void button4_Click(object sender, EventArgs e)
+        private void btnExaminar_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -136,12 +133,12 @@ namespace CapaVista
             }
         }
         //Francisco 0901-17-16694
-        private void button5_Click(object sender, EventArgs e)//Llama y actualiza datagrid
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             actualizardatagriew();
         }
         //Francisco 0901-17-16694
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)// Muestra los datos en los texbox al seleccionarlos en el data grid por medio del evento mouse
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textBoxNombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -173,7 +170,7 @@ namespace CapaVista
         }
         //Angel Chacón 9959-18-5201 
         //Funcion para visalizar los reportes asociados a los modulos de trabajo
-        private void abrir_Click(object sender, EventArgs e)
+        private void btnAbrir_Click(object sender, EventArgs e)
         {
             string est;
             est = Convert.ToString(txtEstado.Text);

@@ -5,24 +5,27 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using CrystalDecisions.CrystalReports.Engine;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaVista
+namespace CapaVistaReporte
 {
-    public partial class frmReporteAdm : Form
+    //Luis Reyes 0901-15-3121
+    public partial class frmReporteEmp : Form
     {
-        public frmReporteAdm()
+        public frmReporteEmp()
         {
             InitializeComponent();
         }
-        public frmReporteAdm(String texto)
+        //Luis Reyes 0901-15-3121
+        public frmReporteEmp(String texto)
         {
             InitializeComponent();
             textBox1.Text = texto;
             mostrar();
         }
+        //Luis Reyes 0901-15-3121
         public void mostrar()
         {
             ReportDocument crystalrpt = new ReportDocument();

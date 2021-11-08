@@ -7,13 +7,13 @@ using System.Windows.Forms;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaModelo
+namespace CapaModeloReporte
 {
     public class Sentencias
     {
         Conexion cn = new Conexion();
         //Carol Monterroso 0901-17-5961
-        public void Guardar(string nombre,string ruta,string IdAplicacion, string estado,string id)
+        public void Guardar(string nombre, string ruta, string IdAplicacion, string estado, string id)
         {
             string cadena = "UPDATE reporte SET" +
                 "nombre = '" + nombre + "'," +
@@ -21,7 +21,6 @@ namespace CapaModelo
                 "idAplicacion = '" + IdAplicacion + "'," +
                 "estado = '" + estado + "' " +
                 "WHERE (idReporte = '" + id + "');";
-
             try
             {
                 OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
@@ -30,9 +29,8 @@ namespace CapaModelo
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error en CapaModelo --> Consulta: " + e);
+                Console.WriteLine("Error en CapaModeloReporte --> Sentencias: " + e);
             }
-
         }
         //Luis Reyes 0901-15-3121
         public void Guardar2(string id, string nombre, string ruta, string IdAplicacion, string estado)
@@ -76,7 +74,7 @@ namespace CapaModelo
                 OdbcDataReader leer = datos.ExecuteReader();
                 return leer;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 return null;
@@ -129,7 +127,7 @@ namespace CapaModelo
         {
             //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
             string sql = "SELECT * FROM reporte where nombre = '" + datob + "' ;"; // aqui ponemos la consulta de la busqueda que vallamos hacer en la BD
-            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, cn.conexion()); // aqui creamos un objeto de OdbcDataAda y le mandamos la consulta y abrimos conecion con la BD
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, cn.conexion());
             return dataTable; // Aquie retorna el dataTable
         }
         // Luis Reyes 0901-15-3121

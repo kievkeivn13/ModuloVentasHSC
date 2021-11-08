@@ -9,23 +9,22 @@ using System.Threading.Tasks;
 using CrystalDecisions.CrystalReports.Engine;
 using System.Windows.Forms;
 
-namespace CapaVista
+namespace CapaVistaReporte
 {
-    //Luis Reyes 0901-15-3121
-    public partial class frmReporteEmp : Form
+    public partial class frmReporteAdm : Form
     {
-        public frmReporteEmp()
+        public frmReporteAdm()
         {
             InitializeComponent();
         }
-        //Luis Reyes 0901-15-3121
-        public frmReporteEmp(String texto)
+        //Angel Chacón 9959-18-5201 
+        public frmReporteAdm(String texto)
         {
             InitializeComponent();
             textBox1.Text = texto;
             mostrar();
         }
-        //Luis Reyes 0901-15-3121
+        //Angel Chacón 9959-18-5201 
         public void mostrar()
         {
             ReportDocument crystalrpt = new ReportDocument();

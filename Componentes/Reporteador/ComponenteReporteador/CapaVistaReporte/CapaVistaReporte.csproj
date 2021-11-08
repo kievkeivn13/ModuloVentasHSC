@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0674A67D-2208-40A6-AB8D-7B2C88A2B1A6}</ProjectGuid>
+    <ProjectGuid>{410FD131-52B7-40CF-893E-4A14936394B4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CapaVista</RootNamespace>
-    <AssemblyName>CapaVista</AssemblyName>
+    <RootNamespace>CapaVistaReporte</RootNamespace>
+    <AssemblyName>CapaVistaReporte</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,8 +32,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CapaControlador">
-      <HintPath>..\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
+    <Reference Include="CapaControladorReporte">
+      <HintPath>..\CapaControladorReporte\bin\Debug\CapaControladorReporte.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
