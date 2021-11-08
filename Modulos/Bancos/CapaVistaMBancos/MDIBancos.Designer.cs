@@ -83,7 +83,7 @@ namespace CapaVistaMBancos
             // ayudaGeneralToolStripMenuItem
             // 
             this.ayudaGeneralToolStripMenuItem.Name = "ayudaGeneralToolStripMenuItem";
-            this.ayudaGeneralToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ayudaGeneralToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.ayudaGeneralToolStripMenuItem.Text = "Ayuda General";
             // 
             // herramientasToolStripMenuItem
@@ -93,7 +93,7 @@ namespace CapaVistaMBancos
             this.seguridadToolStripMenuItem,
             this.reporteadorToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // consultasInteligentesToolStripMenuItem
@@ -136,14 +136,14 @@ namespace CapaVistaMBancos
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -191,7 +191,7 @@ namespace CapaVistaMBancos
             // chequesGeneradosToolStripMenuItem
             // 
             this.chequesGeneradosToolStripMenuItem.Name = "chequesGeneradosToolStripMenuItem";
-            this.chequesGeneradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chequesGeneradosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.chequesGeneradosToolStripMenuItem.Text = "Cheques Generados";
             // 
             // movimientosRealizadosToolStripMenuItem
@@ -205,7 +205,7 @@ namespace CapaVistaMBancos
             // chequesEmitidosToolStripMenuItem
             // 
             this.chequesEmitidosToolStripMenuItem.Name = "chequesEmitidosToolStripMenuItem";
-            this.chequesEmitidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chequesEmitidosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.chequesEmitidosToolStripMenuItem.Text = "Cheques Emitidos";
             // 
             // txtUsuario
@@ -225,7 +225,7 @@ namespace CapaVistaMBancos
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MDIBancos";
-            this.Text = "MDIBancos";
+            this.Text = "6001 Bancos";
             this.Load += new System.EventHandler(this.MDIBancos_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
