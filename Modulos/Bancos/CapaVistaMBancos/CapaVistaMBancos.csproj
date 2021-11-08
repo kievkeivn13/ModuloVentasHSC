@@ -31,20 +31,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaControladorMBancos">
+    <Reference Include="CapaControladorMBancos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CapaControladorMBancos\bin\Debug\CapaControladorMBancos.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVista">
-      <HintPath>..\..\..\2, 2021\Analisis de sistemas II\Area de Pruebas\Proyecto Hotel HSC\ProyectoHSC22021\Componentes\ConsultasInteligentes\ConsultasInteligentes\consultasinteligentes\CapaVista\bin\Debug\CapaVista.dll</HintPath>
+    <Reference Include="CapaVista, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\ConsultasInteligentes\ConsultasInteligentes\consultasinteligentes\CapaVista\bin\Debug\CapaVista.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaReporte">
-      <HintPath>..\..\..\2, 2021\Analisis de sistemas II\Reporteador\ComponenteReporteador\CapaVistaReporte\bin\Debug\CapaVistaReporte.dll</HintPath>
+    <Reference Include="CapaVistaReporte, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Reporteador\ComponenteReporteador\CapaVistaReporte\bin\Debug\CapaVistaReporte.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaSeguridadHSC">
-      <HintPath>..\..\..\2, 2021\Analisis de sistemas II\Area de Pruebas\Proyecto Hotel HSC\ProyectoHSC22021\Componentes\Seguridad\SeguridadHSC\CapaVista\bin\Debug\CapaVistaSeguridadHSC.dll</HintPath>
+    <Reference Include="CapaVistaSeguridadHSC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Seguridad\SeguridadHSC\CapaVista\bin\Debug\CapaVistaSeguridadHSC.dll</HintPath>
     </Reference>
-    <Reference Include="DLLnav">
-      <HintPath>..\..\..\2, 2021\Analisis de sistemas II\Area de Pruebas\Proyecto Hotel HSC\ProyectoHSC22021\Componentes\Navegador\DLLnav\DLLnav\bin\Debug\DLLnav.dll</HintPath>
+    <Reference Include="DLLnav, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Navegador\DLLnav\DLLnav\bin\Debug\DLLnav.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,6 +63,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDisponibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisponibilidad.Designer.cs">
+      <DependentUpon>frmDisponibilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSolicitudCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolicitudCuenta.Designer.cs">
+      <DependentUpon>frmSolicitudCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipodeCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipodeCambio.Designer.cs">
+      <DependentUpon>frmTipodeCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTranferecia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTranferecia.Designer.cs">
+      <DependentUpon>frmTranferecia.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIBancos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +101,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDisponibilidad.resx">
+      <DependentUpon>frmDisponibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicitudCuenta.resx">
+      <DependentUpon>frmSolicitudCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipodeCambio.resx">
+      <DependentUpon>frmTipodeCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTranferecia.resx">
+      <DependentUpon>frmTranferecia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIBancos.resx">
       <DependentUpon>MDIBancos.cs</DependentUpon>
     </EmbeddedResource>
