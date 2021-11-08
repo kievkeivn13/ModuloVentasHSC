@@ -31,19 +31,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaControladorMVentasCC">
-      <HintPath>..\CapaControladorMVentasCC\bin\Debug\CapaControladorMVentasCC.dll</HintPath>
-    </Reference>
-    <Reference Include="CapaVistaSeguridadHSC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Bitacora, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\Respaldo quitan entrega\Seguridad\SeguridadHSC\CapaVista\bin\Debug\CapaVistaSeguridadHSC.dll</HintPath>
+      <HintPath>..\..\..\Componentes\Navegador\DLLnav\DLLnav\bin\Debug\Bitacora.dll</HintPath>
     </Reference>
+    <Reference Include="CapaControladorMVentasCC">
+      <HintPath>..\Controlador\bin\Debug\CapaControladorMVentasCC.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaVistaSeguridadHSC">
+      <HintPath>..\..\..\Componentes\Seguridad\SeguridadHSC\CapaVista\bin\Debug\CapaVistaSeguridadHSC.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DLLnav">
-      <HintPath>..\..\..\ProyectoHSC\Componentes\Navegador\DLLnav\DLLnav\bin\Debug\DLLnav.dll</HintPath>
+      <HintPath>..\..\..\Componentes\Navegador\DLLnav\DLLnav\bin\Debug\DLLnav.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cotizacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Facturacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Facturacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCotizacion.Designer.cs">
+      <DependentUpon>frmCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturacion.Designer.cs">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,17 +121,47 @@
     <Compile Include="frmMantenimientoTipoInventario.Designer.cs">
       <DependentUpon>frmMantenimientoTipoInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPedido.Designer.cs">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIVentas.Designer.cs">
       <DependentUpon>MDIVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedidos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pedidos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCotizacion.Designer.cs">
+      <DependentUpon>ReporteCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteFacturacion.Designer.cs">
+      <DependentUpon>ReporteFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePedidos.Designer.cs">
+      <DependentUpon>ReportePedidos.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +170,20 @@
     <Content Include="Recursos\pinpng.com-icono-de-telefono-png-1284803.ico" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cotizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cotizacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Facturacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCotizacion.resx">
+      <DependentUpon>frmCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturacion.resx">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoCliente.resx">
       <DependentUpon>frmMantenimientoCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,13 +202,32 @@
     <EmbeddedResource Include="frmMantenimientoTipoInventario.resx">
       <DependentUpon>frmMantenimientoTipoInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIVentas.resx">
       <DependentUpon>MDIVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Pedidos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCotizacion.resx">
+      <DependentUpon>ReporteCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteFacturacion.resx">
+      <DependentUpon>ReporteFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportePedidos.resx">
+      <DependentUpon>ReportePedidos.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
