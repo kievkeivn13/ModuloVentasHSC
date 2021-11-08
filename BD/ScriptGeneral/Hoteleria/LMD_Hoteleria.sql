@@ -19,3 +19,10 @@ ALTER TABLE hotelsancarlos.salon
 	DROP INDEX idCuenta;
 ;
 
+-- tabla tipocama
+ALTER TABLE hotelsancarlos.tipocama 
+DROP COLUMN idCuenta;
+
+-- tabla mesa
+ALTER TABLE hotelsancarlos.mesa
+DROP COLUMN idCuenta;
