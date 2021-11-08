@@ -52,3 +52,11 @@ INSERT INTO aplicacion VALUES ("0012","1","Mantenimiento Módulo",1,0012,0);
 /*Alter con ajuste de tamaño para el campo de ip en bitácora*/ 
 ALTER TABLE hotelsancarlos.bitacorausuario 
 CHANGE COLUMN ip ip VARCHAR(100) NULL DEFAULT NULL ;
+
+/*Alter con ajuste de tamanio para nombre de reporte*/
+ALTER TABLE hotelsancarlos.reporte
+CHANGE COLUMN nombre nombre VARCHAR(80) NOT NULL ;
+
+/*Alter con ajuste de tamanio para la ruta del reporte*/
+ALTER TABLE hotelsancarlos.reporte 
+CHANGE COLUMN ruta ruta VARCHAR(180) NOT NULL;
