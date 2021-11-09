@@ -43,17 +43,17 @@ namespace CapaVistaMVentasCC
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoComisiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comisiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarComisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.comisiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoComisiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarComisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,21 +110,21 @@ namespace CapaVistaMVentasCC
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // morasToolStripMenuItem
             // 
             this.morasToolStripMenuItem.Name = "morasToolStripMenuItem";
-            this.morasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.morasToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.morasToolStripMenuItem.Text = "Moras";
             this.morasToolStripMenuItem.Click += new System.EventHandler(this.morasToolStripMenuItem_Click);
             // 
             // fraccionamientosToolStripMenuItem
             // 
             this.fraccionamientosToolStripMenuItem.Name = "fraccionamientosToolStripMenuItem";
-            this.fraccionamientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fraccionamientosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.fraccionamientosToolStripMenuItem.Text = "Fraccionamientos";
             this.fraccionamientosToolStripMenuItem.Click += new System.EventHandler(this.fraccionamientosToolStripMenuItem_Click);
             // 
@@ -134,20 +134,20 @@ namespace CapaVistaMVentasCC
             this.tipoInventarioToolStripMenuItem,
             this.inventarioToolStripMenuItem});
             this.inventariosToolStripMenuItem.Name = "inventariosToolStripMenuItem";
-            this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.inventariosToolStripMenuItem.Text = "Inventarios";
             // 
             // tipoInventarioToolStripMenuItem
             // 
             this.tipoInventarioToolStripMenuItem.Name = "tipoInventarioToolStripMenuItem";
-            this.tipoInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoInventarioToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.tipoInventarioToolStripMenuItem.Text = "Tipo Inventario";
             this.tipoInventarioToolStripMenuItem.Click += new System.EventHandler(this.tipoInventarioToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -156,15 +156,30 @@ namespace CapaVistaMVentasCC
             this.documentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipoDocumentoToolStripMenuItem});
             this.documentosToolStripMenuItem.Name = "documentosToolStripMenuItem";
-            this.documentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.documentosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.documentosToolStripMenuItem.Text = "Documentos";
             // 
             // tipoDocumentoToolStripMenuItem
             // 
             this.tipoDocumentoToolStripMenuItem.Name = "tipoDocumentoToolStripMenuItem";
-            this.tipoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.tipoDocumentoToolStripMenuItem.Text = "Tipo Documento";
             this.tipoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDocumentoToolStripMenuItem_Click);
+            // 
+            // comisionesToolStripMenuItem
+            // 
+            this.comisionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tipoComisiónToolStripMenuItem});
+            this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
+            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.comisionesToolStripMenuItem.Text = "Comisiones";
+            // 
+            // tipoComisiónToolStripMenuItem
+            // 
+            this.tipoComisiónToolStripMenuItem.Name = "tipoComisiónToolStripMenuItem";
+            this.tipoComisiónToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.tipoComisiónToolStripMenuItem.Text = "Tipo Comisión";
+            this.tipoComisiónToolStripMenuItem.Click += new System.EventHandler(this.tipoComisiónToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -180,21 +195,36 @@ namespace CapaVistaMVentasCC
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
+            // 
+            // comisiónToolStripMenuItem
+            // 
+            this.comisiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asignarComisionesToolStripMenuItem});
+            this.comisiónToolStripMenuItem.Name = "comisiónToolStripMenuItem";
+            this.comisiónToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.comisiónToolStripMenuItem.Text = "Comisión";
+            // 
+            // asignarComisionesToolStripMenuItem
+            // 
+            this.asignarComisionesToolStripMenuItem.Name = "asignarComisionesToolStripMenuItem";
+            this.asignarComisionesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.asignarComisionesToolStripMenuItem.Text = "Asignar Comisiones";
+            this.asignarComisionesToolStripMenuItem.Click += new System.EventHandler(this.asignarComisionesToolStripMenuItem_Click);
             // 
             // cotizaciónToolStripMenuItem
             // 
             this.cotizaciónToolStripMenuItem.Name = "cotizaciónToolStripMenuItem";
-            this.cotizaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cotizaciónToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.cotizaciónToolStripMenuItem.Text = "Cotización";
             this.cotizaciónToolStripMenuItem.Click += new System.EventHandler(this.cotizaciónToolStripMenuItem_Click);
             // 
             // facturaciónToolStripMenuItem
             // 
             this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.facturaciónToolStripMenuItem.Text = "Facturación";
             this.facturaciónToolStripMenuItem.Click += new System.EventHandler(this.facturaciónToolStripMenuItem_Click);
             // 
@@ -218,36 +248,6 @@ namespace CapaVistaMVentasCC
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 5;
             this.txtUsuario.Visible = false;
-            // 
-            // comisiónToolStripMenuItem
-            // 
-            this.comisiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asignarComisionesToolStripMenuItem});
-            this.comisiónToolStripMenuItem.Name = "comisiónToolStripMenuItem";
-            this.comisiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.comisiónToolStripMenuItem.Text = "Comisión";
-            // 
-            // comisionesToolStripMenuItem
-            // 
-            this.comisionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tipoComisiónToolStripMenuItem});
-            this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
-            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.comisionesToolStripMenuItem.Text = "Comisiones";
-            // 
-            // tipoComisiónToolStripMenuItem
-            // 
-            this.tipoComisiónToolStripMenuItem.Name = "tipoComisiónToolStripMenuItem";
-            this.tipoComisiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tipoComisiónToolStripMenuItem.Text = "Tipo Comisión";
-            this.tipoComisiónToolStripMenuItem.Click += new System.EventHandler(this.tipoComisiónToolStripMenuItem_Click);
-            // 
-            // asignarComisionesToolStripMenuItem
-            // 
-            this.asignarComisionesToolStripMenuItem.Name = "asignarComisionesToolStripMenuItem";
-            this.asignarComisionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.asignarComisionesToolStripMenuItem.Text = "Asignar Comisiones";
-            this.asignarComisionesToolStripMenuItem.Click += new System.EventHandler(this.asignarComisionesToolStripMenuItem_Click);
             // 
             // MDIVentas
             // 

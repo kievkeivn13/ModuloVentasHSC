@@ -138,8 +138,8 @@ namespace CapaVistaMVentasCC
                     permisoModificar = false;
                 }
 
-                btnAgregarEncabezado.Enabled = false;
-                btnCancelarEncabezado.Enabled = false;
+                btnAgregarEncabezado.Enabled = true;
+                btnCancelarEncabezado.Enabled = true;
 
                 //Habilitación de Permisos
 
@@ -166,23 +166,34 @@ namespace CapaVistaMVentasCC
 
                 if (permisoModificar == false)
                 {
-                    btnAgregarEncabezado.Enabled = true;
+                    //btnAgregarEncabezado.Enabled = true;
                     btnModificarEncabezado.Enabled = false;
-                    btnLimpiarDetalle.Enabled = true;
-                    btnCancelarEncabezado.Enabled = true;
-                    btnAgregarDetalle.Enabled = true;
+                   // btnLimpiarDetalle.Enabled = true;
+                   // btnCancelarEncabezado.Enabled = true;
+                   // btnAgregarDetalle.Enabled = true;
                     btnModificarDetalle.Enabled = false;
            
                 }
                 else
                 {
-                    btnAgregarEncabezado.Enabled = true;
+                   
                     btnModificarEncabezado.Enabled = true;
                     btnLimpiarDetalle.Enabled = true;
                     btnCancelarEncabezado.Enabled = true;
-                    btnAgregarDetalle.Enabled = false;
+                    
                     btnModificarDetalle.Enabled = true;
              
+                }
+                if (permisoEliminar == false)
+                {
+                    btnEliminarEncabezado.Enabled = false;
+                    btnEliminarDetalle.Enabled = false;
+
+                }
+                else
+                {
+                    btnEliminarEncabezado.Enabled = true;
+                    btnEliminarDetalle.Enabled = true;
                 }
 
                 if (permisoReporteador == false)
@@ -383,7 +394,7 @@ namespace CapaVistaMVentasCC
                     //loggear.guardarEnBitacora(IdUsuario, "3001", "3502", "Inserción realizada de encabezado cotizacion ID: "+txtIdComision.Text);
                     cn.llamarInsertaEncabezado(txtIdComision.Text, txtIdEmplead.Text, txtComosionesmes.Text, txtFecha.Text);
                     MessageBox.Show("Insercion realizada");
-                    actualizardatagriewDetalle();actualizardatagriew();
+                    actualizardatagriewDetalle();actualizardatagriew();funLimpiarEnacabezado();
 
                 }
                 catch (Exception ex)
@@ -528,9 +539,10 @@ namespace CapaVistaMVentasCC
             else
             {
                 try
-                {
-                    float total = 0;
-                    total = actualcomisionmes - actualcomisionfactura;
+                {   float total = 0;actualcomisionmes=float.Parse(cn.llamarConsultaComisionesmes(txtIdComision.Text, tabla));
+                    actualcomisionfactura = float.Parse(cn.llamarConsultaComisionesfac(txtIdDetalle.Text,tabla1));
+                    float valor = float.Parse(txtSubTotal.Text);
+                    total = actualcomisionmes - actualcomisionfactura+valor;
                     cn.llamarModificarComisionmes(txtIdComision.Text, total.ToString());
                     txtComosionesmes.Text = total.ToString();
                 }
@@ -574,7 +586,8 @@ namespace CapaVistaMVentasCC
                 }
                 try
                 {
-                    
+                    actualcomisionmes = float.Parse(cn.llamarConsultaComisionesmes(txtIdComision.Text, tabla));
+                    actualcomisionfactura = float.Parse(cn.llamarConsultaComisionesfac(txtIdDetalle.Text, tabla1));
                     float total = 0;
                     total = actualcomisionmes - actualcomisionfactura;
                     cn.llamarModificarComisionmes(txtIdComision.Text, total.ToString());
@@ -643,8 +656,8 @@ namespace CapaVistaMVentasCC
                 cbxFactura.SelectedIndex=int.Parse(dtgDetalle.CurrentRow.Cells[3].Value.ToString())-1;
                 txtMontoFactura.Text = dtgDetalle.CurrentRow.Cells[4].Value.ToString();
                 txtSubTotal.Text= dtgDetalle.CurrentRow.Cells[5].Value.ToString();
-                actualcomisionfactura = float.Parse(txtSubTotal.Text);
-                actualcomisionmes = float.Parse(txtComosionesmes.Text);
+                //actualcomisionfactura = float.Parse(txtSubTotal.Text);
+               // actualcomisionmes = float.Parse(txtComosionesmes.Text);
                 txtTotal.Text = txtComosionesmes.Text;
                 actualizardatagriewDetalle();
                 //funModificarDetalle(); funDeshabilitaAgregar();

@@ -307,5 +307,33 @@ namespace CapaModeloMVentasCC
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
             consulta.ExecuteNonQuery();
         }
+        public string metodoComisionmes(string nombre, string tabla)
+        {
+            string id = "";
+            string Query = "select * from " + tabla + " where Pkid= '" + nombre + "';";
+            OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
+            consulta.ExecuteNonQuery();
+            OdbcDataReader busqueda;
+            busqueda = consulta.ExecuteReader();
+            if (busqueda.Read())
+            {
+                id = busqueda["Comisionesmes"].ToString();
+            }
+            return id;
+        }
+        public string metodoComisionmesfac(string nombre, string tabla)
+        {
+            string id = "";
+            string Query = "select * from " + tabla + " where Pkid= '" + nombre + "';";
+            OdbcCommand consulta = new OdbcCommand(Query, cn.conexion());
+            consulta.ExecuteNonQuery();
+            OdbcDataReader busqueda;
+            busqueda = consulta.ExecuteReader();
+            if (busqueda.Read())
+            {
+                id = busqueda["Cantidadcomision"].ToString();
+            }
+            return id;
+        }
     }
 }

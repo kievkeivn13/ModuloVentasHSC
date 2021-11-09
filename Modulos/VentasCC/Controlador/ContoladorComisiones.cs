@@ -118,6 +118,17 @@ namespace CapaControladorMVentasCC
 
             sn.metodoModifarComisionmes(id, comisionmes);
         }
+        public string llamarConsultaComisionesmes(string id, string tabla)
+        {
 
+            string valor= sn.metodoComisionmes(id, tabla);
+            return valor;
+        }
+        public string llamarConsultaComisionesfac(string id, string comisionmes)
+        {
+
+            string valor = sn.metodoComisionmesfac(id, comisionmes);
+            return valor;
+        }
     }
 }

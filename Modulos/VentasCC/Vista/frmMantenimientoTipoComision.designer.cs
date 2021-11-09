@@ -205,7 +205,7 @@ namespace CapaVistaMVentasCC
             this.MaximizeBox = false;
             this.Name = "frmMantenimientoTipoComision";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMantenimientoTipoComision";
+            this.Text = "3501 MantenimientoTipoComision";
             ((System.ComponentModel.ISupportInitialize)(this.dtgTipoInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

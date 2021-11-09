@@ -121,3 +121,8 @@ insert into aplicacion values ("3004","3001","Pedidos","1","","");
 insert into usuarioaplicacion values ("1","3002","1","1","1","1","1");
 insert into usuarioaplicacion values ("1","3003","1","1","1","1","1");
 insert into usuarioaplicacion values ("1","3004","1","1","1","1","1");
+
+insert into aplicacion values ("3501","3001","Mantenimiento tipo comision","1","","");
+insert into aplicacion values ("3502","3001","Trasaccional asignar comisiones","1","","");
+insert into usuarioaplicacion values ("1","3501","1","1","1","1","1");
+insert into usuarioaplicacion values ("1","3502","1","1","1","1","1");
