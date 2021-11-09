@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comisiones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Comisiones.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Cotizacion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +78,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Facturacion.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComisiones.designer.cs">
+      <DependentUpon>frmComisiones.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCotizacion.cs">
       <SubType>Form</SubType>
@@ -109,6 +121,12 @@
     <Compile Include="frmMantenimientoMora.Designer.cs">
       <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantenimientoTipoComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoTipoComision.designer.cs">
+      <DependentUpon>frmMantenimientoTipoComision.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoTipoDocumento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +163,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="rComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rComision.Designer.cs">
+      <DependentUpon>rComision.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,13 +187,48 @@
     <Compile Include="ReportePedidos.Designer.cs">
       <DependentUpon>ReportePedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="rTipoComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rTipoComision.Designer.cs">
+      <DependentUpon>rTipoComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoComision.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoComision.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ayudas\AyudaComisiones\Manual-Comisiones-1.0.html" />
     <Content Include="Recursos\90 Simple Backgrounds Edit and Download Visual Learning Center.jpg" />
     <Content Include="Recursos\fondo ventas.jpg" />
+    <Content Include="Recursos\iOSFilled\actualizar.png" />
+    <Content Include="Recursos\iOSFilled\anterior.png" />
+    <Content Include="Recursos\iOSFilled\ayuda.png" />
+    <Content Include="Recursos\iOSFilled\ayuda1 %282%29.png" />
+    <Content Include="Recursos\iOSFilled\borrar.png" />
+    <Content Include="Recursos\iOSFilled\buscar.png" />
+    <Content Include="Recursos\iOSFilled\cancelar.png" />
+    <Content Include="Recursos\iOSFilled\confirmar.png" />
+    <Content Include="Recursos\iOSFilled\Final.png" />
+    <Content Include="Recursos\iOSFilled\guardar.png" />
+    <Content Include="Recursos\iOSFilled\imprimir.png" />
+    <Content Include="Recursos\iOSFilled\ingresarr.png" />
+    <Content Include="Recursos\iOSFilled\Inicio.png" />
+    <Content Include="Recursos\iOSFilled\modificar.png" />
+    <Content Include="Recursos\iOSFilled\reportes.png" />
+    <Content Include="Recursos\iOSFilled\salir.png" />
+    <Content Include="Recursos\iOSFilled\salir2.png" />
+    <Content Include="Recursos\iOSFilled\siguiente.png" />
     <Content Include="Recursos\pinpng.com-icono-de-telefono-png-1284803.ico" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comisiones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Comisiones.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Cotizacion.cs</LastGenOutput>
@@ -177,6 +236,9 @@
     <EmbeddedResource Include="Facturacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Facturacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmComisiones.resx">
+      <DependentUpon>frmComisiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCotizacion.resx">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
@@ -195,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoMora.resx">
       <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoTipoComision.resx">
+      <DependentUpon>frmMantenimientoTipoComision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoTipoDocumento.resx">
       <DependentUpon>frmMantenimientoTipoDocumento.cs</DependentUpon>
@@ -216,6 +281,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rComision.resx">
+      <DependentUpon>rComision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteCotizacion.resx">
       <DependentUpon>ReporteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,9 +293,23 @@
     <EmbeddedResource Include="ReportePedidos.resx">
       <DependentUpon>ReportePedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rTipoComision.resx">
+      <DependentUpon>rTipoComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoComision.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TipoComision.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ayudas\AyudaComisiones\AyudasComisiones.chm" />
+    <None Include="Ayudas\AyudaComisiones\AyudasComisiones.chw" />
+    <None Include="Ayudas\AyudaComisiones\AyudasComisiones.hhc" />
+    <None Include="Ayudas\AyudaComisiones\AyudasComisiones.hhp" />
+    <None Include="Ayudas\AyudaComisiones\Index.hhk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

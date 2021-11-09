@@ -45,6 +45,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sentencias.cs" />
+    <Compile Include="SentenciasComisiones.cs" />
     <Compile Include="SentenciasFacturacion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -113,5 +113,33 @@ namespace CapaVistaMVentasCC
             form3.MdiParent = this;
             form3.Show();
         }
-	}
+
+        private void asignarComisionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Kevin Flores 9959-18-17632
+                frmComisiones form3 = new frmComisiones();
+                form3.MdiParent = this;
+                form3.Show();
+            }catch
+            {
+
+            }
+        }
+
+        private void tipoComisiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Kevin Flores 9959-18-17632
+                frmMantenimientoTipoComision form3 = new frmMantenimientoTipoComision();
+                form3.MdiParent = this;
+                form3.Show();
+            }catch
+            {
+
+            }
+        }
+    }
 }

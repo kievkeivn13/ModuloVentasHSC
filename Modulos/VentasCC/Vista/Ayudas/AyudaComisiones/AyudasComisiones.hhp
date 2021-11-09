@@ -1,0 +1,19 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=AyudasComisiones.chm
+Contents file=AyudasComisiones.hhc
+Default Window=Ayudas Comisión HSC
+Display compile progress=No
+Index file=Index.hhk
+Language=0x580a Español (Latinoamérica)
+
+[WINDOWS]
+Ayudas Comisión HSC="Ayudas para ela aplicacion de comisiones.","AyudasComisiones.hhc","Index.hhk","Manual-Comisiones-1.0.html","Manual-Comisiones-1.0.html","Manual-Comisiones-1.0.html","Manual-Comisiones-1.0","Manual-Comisiones-1.0.html","Manual-Comisiones-1.0",0x23520,,0xc3862,,,,,,,,0
+
+
+[FILES]
+OutDocument.htm
+Manual-Comisiones-1.0.html
+
+[INFOTYPES]
+
