@@ -30,7 +30,7 @@ namespace CapaVistaMVentasCC
             InitializeComponent(); SetMyCustomFormat();
             actualizardatagriew();
             txtIdComision.Focus();
-            funLlenarComboControl(cbxIdEmpleado, "Empleado", "pkIdEmpleado", "nombre", "estatus");
+            funLlenarComboControl(cbxIdEmpleado, "Empleado", "pkIdEmpleado", "nombre", "estado");
             funLlenarComboControl(cbxTipoComision, "Comision", "Pkid", "nombre", "estado");
             mensajesAsistencia(); 
             loggear.guardarEnBitacora(IdUsuario, "3001", "3502", "Acceso a Cotizaciones");

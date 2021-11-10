@@ -246,7 +246,7 @@ namespace CapaModeloMVentasCC
         {
 
             string cadena = "INSERT INTO comisionasignadadetalle VALUES ('" + id + "','" + idencabezado + "','" + idfactura + "','" + idComision + "','" + montofactura + "','" + Cantidadcomision + "');";
-            MessageBox.Show(cadena);
+            //MessageBox.Show(cadena);
             OdbcCommand consulta = new OdbcCommand(cadena, cn.conexion());
             consulta.ExecuteNonQuery();
         }
