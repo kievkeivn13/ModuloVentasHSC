@@ -91,6 +91,18 @@
     <Compile Include="frmCotizacion.Designer.cs">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEnlaceContableReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnlaceContableReporte.designer.cs">
+      <DependentUpon>frmEnlaceContableReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnlaceContableVentasCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnlaceContableVentasCC.designer.cs">
+      <DependentUpon>frmEnlaceContableVentasCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +127,23 @@
     <Compile Include="frmMantenimientoInventario.Designer.cs">
       <DependentUpon>frmMantenimientoInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantenimientoListaDePrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoListaDePrecios.designer.cs">
+      <DependentUpon>frmMantenimientoListaDePrecios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoMora.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMantenimientoMora.Designer.cs">
       <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoMovimientoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoMovimientoInventario.designer.cs">
+      <DependentUpon>frmMantenimientoMovimientoInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMantenimientoTipoComision.cs">
       <SubType>Form</SubType>
@@ -139,6 +163,12 @@
     <Compile Include="frmMantenimientoTipoInventario.Designer.cs">
       <DependentUpon>frmMantenimientoTipoInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMovimientosCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovimientosCC.designer.cs">
+      <DependentUpon>frmMovimientosCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +180,12 @@
     </Compile>
     <Compile Include="MDIVentas.Designer.cs">
       <DependentUpon>MDIVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientosCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovimientosCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Pedidos.cs">
       <AutoGen>True</AutoGen>
@@ -175,11 +211,23 @@
     <Compile Include="ReporteCotizacion.Designer.cs">
       <DependentUpon>ReporteCotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteEnlaceContable.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEnlaceContable.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReporteFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteFacturacion.Designer.cs">
       <DependentUpon>ReporteFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMovimientosCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteMovimientosCC.designer.cs">
+      <DependentUpon>ReporteMovimientosCC.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportePedidos.cs">
       <SubType>Form</SubType>
@@ -223,6 +271,15 @@
     <Content Include="Recursos\iOSFilled\salir2.png" />
     <Content Include="Recursos\iOSFilled\siguiente.png" />
     <Content Include="Recursos\pinpng.com-icono-de-telefono-png-1284803.ico" />
+    <Content Include="Resources\actualizar.png" />
+    <Content Include="Resources\ayuda.png" />
+    <Content Include="Resources\borrar.png" />
+    <Content Include="Resources\buscar.png" />
+    <Content Include="Resources\cancelar.png" />
+    <Content Include="Resources\imprimir.png" />
+    <Content Include="Resources\ingresarr.png" />
+    <Content Include="Resources\modificar.png" />
+    <Content Include="Resources\salir2.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Comisiones.rpt">
@@ -243,6 +300,12 @@
     <EmbeddedResource Include="frmCotizacion.resx">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEnlaceContableReporte.resx">
+      <DependentUpon>frmEnlaceContableReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnlaceContableVentasCC.resx">
+      <DependentUpon>frmEnlaceContableVentasCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,8 +318,14 @@
     <EmbeddedResource Include="frmMantenimientoInventario.resx">
       <DependentUpon>frmMantenimientoInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoListaDePrecios.resx">
+      <DependentUpon>frmMantenimientoListaDePrecios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoMora.resx">
       <DependentUpon>frmMantenimientoMora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoMovimientoInventario.resx">
+      <DependentUpon>frmMantenimientoMovimientoInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoTipoComision.resx">
       <DependentUpon>frmMantenimientoTipoComision.cs</DependentUpon>
@@ -267,11 +336,18 @@
     <EmbeddedResource Include="frmMantenimientoTipoInventario.resx">
       <DependentUpon>frmMantenimientoTipoInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMovimientosCC.resx">
+      <DependentUpon>frmMovimientosCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPedido.resx">
       <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIVentas.resx">
       <DependentUpon>MDIVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovimientosCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MovimientosCC.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -287,8 +363,15 @@
     <EmbeddedResource Include="ReporteCotizacion.resx">
       <DependentUpon>ReporteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteEnlaceContable.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteEnlaceContable.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteFacturacion.resx">
       <DependentUpon>ReporteFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteMovimientosCC.resx">
+      <DependentUpon>ReporteMovimientosCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportePedidos.resx">
       <DependentUpon>ReportePedidos.cs</DependentUpon>

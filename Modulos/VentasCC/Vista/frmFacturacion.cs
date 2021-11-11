@@ -400,7 +400,7 @@ namespace CapaVistaMVentasCC
 
 		private void btnAyuda_Click(object sender, EventArgs e)
 		{
-			Help.ShowHelp(this, "AyudaFacturacion/AyudaFacturacion.chm", "AyudaFacturacion/AyudaFacturacion.html");
+			Help.ShowHelp(this, "G:/Git/HSC INDIVIDUAL/Ayuda/VentasCC/AyudaFacturacion/AyudaFacturacion.chm", "AyudaFacturacion.html");
 			loggear.guardarEnBitacora(IdUsuario, "3001", "3003", "Acceso a Ayuda");
 		}
 

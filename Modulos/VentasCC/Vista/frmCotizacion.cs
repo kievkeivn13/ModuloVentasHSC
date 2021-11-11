@@ -346,7 +346,7 @@ namespace CapaVistaMVentasCC
 
 		private void btnAyuda_Click(object sender, EventArgs e)
 		{
-			Help.ShowHelp(this, "AyudaCotizacion/AyudaCotizacion.chm", "AyudaCotizacion/AyudaCotizacion.html");
+			Help.ShowHelp(this, "G:/Git/HSC INDIVIDUAL/Ayuda/VentasCC/AyudaCotizacion/AyudaCotizacion.chm", "AyudaCotizacion.html");
 			loggear.guardarEnBitacora(IdUsuario, "3001", "3002", "Acceso a Ayuda");
 		}
 

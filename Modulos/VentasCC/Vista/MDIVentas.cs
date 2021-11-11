@@ -48,9 +48,9 @@ namespace CapaVistaMVentasCC
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMantenimientoInventario form3 = new frmMantenimientoInventario();
-            form3.MdiParent = this;
-            form3.Show();
+           frmMantenimientoInventario form3 = new frmMantenimientoInventario();
+           form3.MdiParent = this;
+           form3.Show();
         }
 
         private void tipoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,6 +140,37 @@ namespace CapaVistaMVentasCC
             {
 
             }
+        }
+
+        private void movimientoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMantenimientoMovimientoInventario form3 = new frmMantenimientoMovimientoInventario();
+            form3.MdiParent = this;
+
+            form3.Show();
+        }
+
+        private void listaDePreciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMantenimientoListaDePrecios form3 = new frmMantenimientoListaDePrecios();
+            form3.MdiParent = this;
+
+            form3.Show();
+        }
+
+        private void movimientosCCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMovimientosCC form3 = new frmMovimientosCC();
+            form3.MdiParent = this;
+
+            form3.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmEnlaceContableVentasCC form3 = new frmEnlaceContableVentasCC();
+            form3.MdiParent = this;
+            form3.Show();
         }
     }
 }

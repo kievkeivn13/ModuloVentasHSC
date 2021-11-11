@@ -41,6 +41,8 @@ namespace CapaVistaMVentasCC
             this.inventariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.movimientoInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDePreciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +53,8 @@ namespace CapaVistaMVentasCC
             this.asignarComisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.movimientosCCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -132,7 +136,9 @@ namespace CapaVistaMVentasCC
             // 
             this.inventariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipoInventarioToolStripMenuItem,
-            this.inventarioToolStripMenuItem});
+            this.inventarioToolStripMenuItem,
+            this.movimientoInventarioToolStripMenuItem,
+            this.listaDePreciosToolStripMenuItem});
             this.inventariosToolStripMenuItem.Name = "inventariosToolStripMenuItem";
             this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.inventariosToolStripMenuItem.Text = "Inventarios";
@@ -140,16 +146,30 @@ namespace CapaVistaMVentasCC
             // tipoInventarioToolStripMenuItem
             // 
             this.tipoInventarioToolStripMenuItem.Name = "tipoInventarioToolStripMenuItem";
-            this.tipoInventarioToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.tipoInventarioToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.tipoInventarioToolStripMenuItem.Text = "Tipo Inventario";
             this.tipoInventarioToolStripMenuItem.Click += new System.EventHandler(this.tipoInventarioToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
+            // 
+            // movimientoInventarioToolStripMenuItem
+            // 
+            this.movimientoInventarioToolStripMenuItem.Name = "movimientoInventarioToolStripMenuItem";
+            this.movimientoInventarioToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.movimientoInventarioToolStripMenuItem.Text = "Movimiento Inventario";
+            this.movimientoInventarioToolStripMenuItem.Click += new System.EventHandler(this.movimientoInventarioToolStripMenuItem_Click);
+            // 
+            // listaDePreciosToolStripMenuItem
+            // 
+            this.listaDePreciosToolStripMenuItem.Name = "listaDePreciosToolStripMenuItem";
+            this.listaDePreciosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.listaDePreciosToolStripMenuItem.Text = "Lista de Precios";
+            this.listaDePreciosToolStripMenuItem.Click += new System.EventHandler(this.listaDePreciosToolStripMenuItem_Click);
             // 
             // documentosToolStripMenuItem
             // 
@@ -187,7 +207,9 @@ namespace CapaVistaMVentasCC
             this.pedidosToolStripMenuItem,
             this.comisiónToolStripMenuItem,
             this.cotizaciónToolStripMenuItem,
-            this.facturaciónToolStripMenuItem});
+            this.facturaciónToolStripMenuItem,
+            this.movimientosCCToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.procesosToolStripMenuItem.Text = "Procesos";
@@ -195,7 +217,7 @@ namespace CapaVistaMVentasCC
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
@@ -204,7 +226,7 @@ namespace CapaVistaMVentasCC
             this.comisiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.asignarComisionesToolStripMenuItem});
             this.comisiónToolStripMenuItem.Name = "comisiónToolStripMenuItem";
-            this.comisiónToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.comisiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.comisiónToolStripMenuItem.Text = "Comisión";
             // 
             // asignarComisionesToolStripMenuItem
@@ -217,16 +239,30 @@ namespace CapaVistaMVentasCC
             // cotizaciónToolStripMenuItem
             // 
             this.cotizaciónToolStripMenuItem.Name = "cotizaciónToolStripMenuItem";
-            this.cotizaciónToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.cotizaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cotizaciónToolStripMenuItem.Text = "Cotización";
             this.cotizaciónToolStripMenuItem.Click += new System.EventHandler(this.cotizaciónToolStripMenuItem_Click);
             // 
             // facturaciónToolStripMenuItem
             // 
             this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.facturaciónToolStripMenuItem.Text = "Facturación";
             this.facturaciónToolStripMenuItem.Click += new System.EventHandler(this.facturaciónToolStripMenuItem_Click);
+            // 
+            // movimientosCCToolStripMenuItem
+            // 
+            this.movimientosCCToolStripMenuItem.Name = "movimientosCCToolStripMenuItem";
+            this.movimientosCCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.movimientosCCToolStripMenuItem.Text = "MovimientosCC";
+            this.movimientosCCToolStripMenuItem.Click += new System.EventHandler(this.movimientosCCToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Enlace Contable";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -298,5 +334,9 @@ namespace CapaVistaMVentasCC
         private System.Windows.Forms.ToolStripMenuItem tipoComisiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comisiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarComisionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem movimientoInventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDePreciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem movimientosCCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

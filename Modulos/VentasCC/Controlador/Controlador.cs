@@ -9,7 +9,7 @@ using CapaModeloMVentasCC;
 
 namespace CapaControladorMVentasCC
 {
-    class Controlador
+    public class Controlador
 	{
         Sentencias sn = new Sentencias();
 

@@ -47,7 +47,10 @@
   <ItemGroup>
     <Compile Include="ContoladorComisiones.cs" />
     <Compile Include="Controlador.cs" />
+    <Compile Include="ControladorCC.cs" />
     <Compile Include="ControladorFacturacion.cs" />
+    <Compile Include="ControladorMovimientoInventario.cs" />
+    <Compile Include="ctlEnlaceContableVentasCC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

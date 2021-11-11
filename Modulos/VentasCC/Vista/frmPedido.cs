@@ -267,7 +267,7 @@ namespace CapaVistaMVentasCC
 
 		private void btnAyuda_Click(object sender, EventArgs e)
 		{
-			Help.ShowHelp(this, "AyudaPedidos/AyudaPedidos.chm", "AyudaPedidos/AyudaPedidos.html");
+			Help.ShowHelp(this, "G:/Git/HSC INDIVIDUAL/Ayuda/VentasCC/AyudaPedidos/AyudaPedidos.chm", "AyudaPedidos.html");
 			loggear.guardarEnBitacora(IdUsuario, "3001", "3004", "Acceso a Ayuda");
 		}
 
